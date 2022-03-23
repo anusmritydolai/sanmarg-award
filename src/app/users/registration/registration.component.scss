@@ -1,0 +1,56 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card {
+  width: 512px;
+  max-width: 80vw;
+}
+.example-form {
+  min-width: 150px;
+  //   max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-half-width {
+  width: 45%;
+}
+
+.width {
+  width: 80%;
+}
+
+.example-quard-width {
+  width: 30%;
+}
+
+.bgcolor {
+  background-color: #85c1e9;
+  color: white;
+}
+
+.btn-reg {
+  width: 160px;
+  border-radius: 25px;
+  height: 40px;
+  margin: 16px 0 32px 0;
+  background-image: linear-gradient(
+    to right,
+    #364096 0%,
+    #4164ad 51%,
+    #364096 100%
+  );
+  text-transform: uppercase;
+  color: white;
+}
+
+.margin{
+  margin-bottom: 1rem !important;
+}

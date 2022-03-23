@@ -1,1 +1,132 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "~@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$sanmarg-award-primary: mat.define-palette(mat.$indigo-palette);
+$sanmarg-award-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$sanmarg-award-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$sanmarg-award-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $sanmarg-award-primary,
+      accent: $sanmarg-award-accent,
+      warn: $sanmarg-award-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($sanmarg-award-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+}
+
+.row,
+.col,
+.row-fill,
+.col-fill,
+body {
+  display: flex !important;
+}
+.col,
+.col-fill,
+body {
+  flex-direction: column;
+}
+.row,
+.row-fill {
+  flex-direction: row;
+}
+.row-fill,
+.col-fill,
+body {
+  flex: 1;
+  overflow: hidden;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+.align-center {
+  text-align: center;
+}
+.align-left {
+  text-align: left;
+  align-self: flex-start;
+}
+.align-right {
+  text-align: right;
+  align-self: flex-end;
+}
+.space-between {
+  justify-content: space-between;
+}
+
+.scroll-x {
+  overflow-x: overlay;
+}
+.scroll-y {
+  overflow-y: overlay;
+}
+
+mat-card {
+  max-width: 880px;
+  width: 84vw;
+  max-height: 82vh;
+  padding: 0 !important;
+}
+
+mat-card-content {
+  padding: 16px;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  max-height: 62vh;
+}
+
+mat-card-actions {
+  padding: 0 16px !important;
+  margin: 12px 0 !important;
+}
+
+mat-card-title {
+  border-radius: 4px 4px 0 0 !important;
+  padding: 16px !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.5em 0 1em 0;
+}
+
+.wrap { flex-wrap: wrap; }
+
+.example-full-width, .example-half-width, .example-quard-width, .width {
+  min-width: 120px;
+}

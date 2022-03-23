@@ -1,0 +1,224 @@
+<mat-card>
+  <mat-card-title class="bgcolor">ORGANISATION DETAILS</mat-card-title>
+  <mat-card-content>
+    <form class="example-form"
+    [formGroup]="form">
+      <!-- <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Company (disabled)</mat-label>
+        <input matInput disabled value="Google">
+      </mat-form-field> -->
+      <div class="row-fill space-between">
+        <div class="example-half-width col">
+          <mat-label>Company Name *</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Company Name" autocomplete=""
+            formControlName="company_name" required>
+            <mat-error
+            *ngIf="
+              form.get('company_name')?.hasError('required') && form.get('company_name')?.touched
+            "
+            >ⓘ Please enter company name – it's required</mat-error
+          >
+          <mat-error
+          *ngIf="
+            form.get('company_name')?.hasError('maxLength') && form.get('company_name')?.touched
+          "
+          >ⓘ Please enter company name – it's too long</mat-error
+        >
+          </mat-form-field>
+        </div>
+        <div class="example-half-width col">
+          <mat-label>Sector *</mat-label>
+        <mat-form-field appearance="outline">
+          <mat-select formControlName="sector" autocomplete="" required>
+            <mat-option value="Agriculture &amp; Allied Industries">
+              Agriculture &amp; Allied Industries
+            </mat-option>
+    
+            <mat-option value="Banking &amp; Finance">Banking &amp; Finance</mat-option>
+    
+            <mat-option value="Education &amp; Skill Development">
+              Education &amp; Skill Development
+            </mat-option>
+    
+            <mat-option value="Entertainment &amp; Media">
+              Entertainment &amp; Media
+            </mat-option>
+    
+            <mat-option value="Logistics &amp; Transportation">
+              Logistics &amp; Transportation
+            </mat-option>
+    
+            <mat-option value="Real Estate &amp; Construction">
+              Real Estate &amp; Construction
+            </mat-option>
+    
+            <mat-option value="IT &amp; ITES">IT &amp; ITES</mat-option>
+    
+            <mat-option value="Retail &amp; E-Commerce">Retail &amp; E-Commerce</mat-option>
+    
+            <mat-option value="Power &amp; Renewable Energy">
+              Power &amp; Renewable Energy
+            </mat-option>
+    
+            <mat-option value="Hospitality, Travel &amp; Tourism">
+              Hospitality, Travel &amp; Tourism
+            </mat-option>
+    
+            <mat-option value="Textile &amp; Fashion">Textile &amp; Fashion</mat-option>
+    
+            <mat-option value="Gems &amp; Jewellery">Gems &amp; Jewellery</mat-option>
+    
+            <mat-option value="Healthcare">Healthcare</mat-option>
+    
+            <mat-option value="Manufacturing &amp; Heavy Industry">
+              Manufacturing &amp; Heavy Industry
+            </mat-option>
+    
+            <mat-option value="Printing &amp; Packaging">
+              Printing &amp; Packaging
+            </mat-option>
+    
+            <mat-option value="Trade">Trade</mat-option>
+    
+            <mat-option value="Services">Services</mat-option>
+    
+            <mat-option value="Others">Others</mat-option>
+          </mat-select>
+          <mat-error
+          *ngIf="
+            form.get('sector')?.hasError('required') && form.get('sector')?.touched
+          "
+          >ⓘ Please enter sector – it's required</mat-error
+        >
+        </mat-form-field>
+      </div>
+      </div>
+      <div class="row-fill space-between">
+        <div class="example-half-width col">
+          <mat-label>Registered company address (Line 1) * </mat-label>
+        <mat-form-field appearance="outline">
+          <textarea matInput placeholder="company address" autocomplete=""
+          formControlName="company_address" required>
+          </textarea>
+          <mat-error
+          *ngIf="
+            form.get('company_address')?.hasError('required') && form.get('company_address')?.touched
+          "
+          >ⓘ Please enter your company address – it's required</mat-error
+        >
+        </mat-form-field>
+        </div>
+        <div class="example-half-width col">
+          <mat-label>Registered company address (Line 2) </mat-label>
+        <mat-form-field appearance="outline">
+          <textarea matInput placeholder="company address" autocomplete=""
+          formControlName="company_address_2"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row-fill space-between">
+      <div class="example-quard-width col">
+        <mat-label>City *</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="City" autocomplete=""
+          formControlName="city" required>
+          <mat-error
+          *ngIf="
+            form.get('city')?.hasError('required') && form.get('city')?.touched
+          "
+          >ⓘ Please enter city – it's required</mat-error
+        >
+        </mat-form-field>
+      </div>
+      <div class="example-quard-width col">
+        <mat-label>State *</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="State" autocomplete=""
+          formControlName="state" required>
+          <mat-error
+          *ngIf="
+            form.get('state')?.hasError('required') && form.get('state')?.touched
+          "
+          >ⓘ Please enter state – it's required</mat-error
+        >
+        </mat-form-field>
+      </div>
+    <div class="example-quard-width col">
+      <mat-label>Pincode *</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Pincode" autocomplete=""
+        formControlName="pincode" required>
+        <mat-error
+        *ngIf="
+          form.get('pincode')?.hasError('required') && form.get('pincode')?.touched
+        "
+        >ⓘ Please enter pincode – it's required</mat-error
+      >
+      <mat-error
+      *ngIf="
+        form.get('pincode')?.hasError('maxLength') && form.get('pincode')?.touched
+      "
+      >ⓘ Please enter company name – it's too long</mat-error
+    >
+      </mat-form-field>
+    </div>
+    </div>
+    <div class="row-fill space-between">
+      <div class="example-quard-width col">
+        <mat-label> Company Website *</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Company Website" autocomplete=""
+          formControlName="company_website" required>
+          <mat-error
+        *ngIf="
+          form.get('company_website')?.hasError('required') && form.get('company_website')?.touched
+        "
+        >ⓘ Please enter company_website – it's required</mat-error
+      >
+        </mat-form-field>
+      </div>
+      <div class="example-quard-width col">
+        <mat-label>Facebook Page</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Facebook Page" autocomplete=""
+          formControlName="facebook_page" >
+        </mat-form-field>
+      </div>
+    <div class="example-quard-width col">
+      <mat-label>Linkedin Page</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Linkedin Page" autocomplete=""
+        formControlName="linkedin_page">
+      </mat-form-field>
+    </div>
+    </div>
+    <div class="row-fill space-between">
+      <div class="example-half-width col">
+        <mat-label>CIN No  </mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="CIN No" autocomplete=""
+        formControlName="cin_no">
+      </mat-form-field>
+      </div>
+      <div class="example-half-width col">
+        <mat-label>GST No * </mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="GST No" autocomplete=""
+        formControlName="gst_no" required>
+        <mat-error
+        *ngIf="
+          form.get('gst_no')?.hasError('required') && form.get('gst_no')?.touched
+        "
+        >ⓘ Please enter your gst no – it's required</mat-error
+      >
+      </mat-form-field>
+    </div>
+   </div>
+    </form>    
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button (click)="nextClick()">Next</button>
+  </mat-card-actions>
+</mat-card>

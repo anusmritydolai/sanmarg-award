@@ -1,0 +1,401 @@
+<mat-card>
+  <mat-card-title class="bgcolor">Business Overview</mat-card-title>
+  <mat-card-content>
+    <form class="example-form" [formGroup]="form">
+      <!-- <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Company (disabled)</mat-label>
+          <input matInput disabled value="Google">
+        </mat-form-field> -->
+
+      <div class="row-fill">
+        <div class="example-full-width col">
+          <mat-label>Business Synopsis *</mat-label>
+          <mat-form-field appearance="outline">
+            <textarea
+              matInput
+              placeholder="Business Synopsis"
+              autocomplete=""
+              formControlName="business_synopsis"
+              required
+            >
+            </textarea>
+            <mat-error
+              *ngIf="
+                form.get('business_synopsis')?.hasError('required') &&
+                form.get('business_synopsis')?.touched
+              "
+              >ⓘ Please enter your business_synopsis – it's required</mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row-fill space-between">
+        <div class="example-half-width col">
+          <mat-label>Year of Establishment *</mat-label>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              [matDatepicker]="dp"
+              [(ngModel)]="date"
+              [ngModelOptions]="{standalone: true}"
+            />
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker
+              #dp
+              startView="multi-year"
+              (yearSelected)="
+                date = $event;
+                form.get('year').setValue($event.year());
+                dp?.close()
+              "
+              panelClass="example-month-picker"
+            >
+            </mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="example-half-width col">
+          <mat-label>Organization's Main Product/Services * </mat-label>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              placeholder="Main Product"
+              autocomplete=""
+              formControlName="main_product"
+              required
+            />
+            <mat-error
+              *ngIf="
+                form.get('main_product')?.hasError('required') &&
+                form.get('main_product')?.touched
+              "
+              >ⓘ Please enter your Main Product – it's required</mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row-fill space-between">
+        <div class="row space-between example-half-width">Annual Turnover(in Lakhs)</div>
+        <div class="row space-between example-half-width">Profit Before Taxes(in Lakhs)</div>  
+      </div>
+      <div class="row-fill space-between">
+        <div class="row space-between example-half-width wrap">
+          <div class="example-quard-width col">
+            <mat-label>2021 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2021"
+                autocomplete=""
+                formControlName="last_year"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('last_year')?.hasError('required') &&
+                  form.get('last_year')?.touched
+                "
+                >ⓘ Please enter 2021 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="example-quard-width">
+            <mat-label>2020*</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2020"
+                autocomplete=""
+                formControlName="last2_year"
+                required
+              />
+              <mat-error
+                *ngIf="
+                form.get('last2_year')?.touched &&
+                form.get('last2_year')?.hasError('required')
+                "
+                >ⓘ Please enter 2020 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="example-quard-width">
+            <mat-label>2019 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2019"
+                autocomplete=""
+                formControlName="last3_year"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('last3_year')?.hasError('required') &&
+                  form.get('last3_year')?.touched
+                "
+                >ⓘ Please enter 2019 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row space-between example-half-width wrap">
+          <div class="example-quard-width">
+            <mat-label>2021 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2021"
+                autocomplete=""
+                formControlName="before_lastyear"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('before_lastyear')?.hasError('required') &&
+                  form.get('before_lastyear')?.touched
+                "
+                >ⓘ Please enter  2021 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="example-quard-width">
+            <mat-label>2020 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2020"
+                autocomplete=""
+                formControlName="before_last2year"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('before_last2year')?.hasError('required') &&
+                  form.get('before_last2year')?.touched
+                "
+                >ⓘ Please enter  2020 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="example-quard-width">
+            <mat-label>2019 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2019"
+                autocomplete=""
+                formControlName="before_last3year"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('before_last3year')?.hasError('required') &&
+                  form.get('before_last3year')?.touched
+                "
+                >ⓘ Please enter  2019 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-fill space-between">
+        <div class="row space-between example-half-width">Net Worth (in Lakhs)</div>
+        <div class="row space-between example-half-width">Market Cap (in Lakhs)</div>  
+      </div>
+      <div class="row-fill space-between">
+        <div class="row space-between example-half-width wrap">
+          <div class="example-quard-width col">
+            <mat-label>2021 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2021"
+                autocomplete=""
+                formControlName="last_years"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('last_years')?.hasError('required') &&
+                  form.get('last_years')?.touched
+                "
+                >ⓘ Please enter 2021 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="example-quard-width">
+            <mat-label>2020*</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2020"
+                autocomplete=""
+                formControlName="last2_years"
+                required
+              />
+              <mat-error
+                *ngIf="
+                form.get('last2_years')?.touched &&
+                form.get('last2_years')?.hasError('required')
+                "
+                >ⓘ Please enter 2020 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="example-quard-width">
+            <mat-label>2019 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2019"
+                autocomplete=""
+                formControlName="last3_years"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('last3_years')?.hasError('required') &&
+                  form.get('last3_years')?.touched
+                "
+                >ⓘ Please enter 2019 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row space-between example-half-width wrap">
+          <div class="example-half-width">
+            <mat-label>on 31st March 2021 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2021"
+                autocomplete=""
+                formControlName="market_lastyear"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('market_lastyear')?.hasError('required') &&
+                  form.get('market_lastyear')?.touched
+                "
+                >ⓘ Please enter  2021 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="example-half-width">
+            <mat-label>on 31st March 2020 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2020"
+                autocomplete=""
+                formControlName="market_last2year"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('market_last2year')?.hasError('required') &&
+                  form.get('market_last2year')?.touched
+                "
+                >ⓘ Please enter  2020 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+
+        </div>
+      </div>
+      <div class="row-fill space-between">
+        <div class="col flex1">
+          <div>Annual Turnover(in Lakhs)</div>
+          <div class="example-full-width">
+            <mat-label>on 31st March 2021 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2021"
+                autocomplete=""
+                formControlName="market_lastyear"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('market_lastyear')?.hasError('required') &&
+                  form.get('market_lastyear')?.touched
+                "
+                >ⓘ Please enter  2021 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <!-- <div class="row space-between flex0"></div> -->
+        <div class="col space-between flex2">
+          <div>Profit Before Taxes(in Lakhs)</div>
+          <div class="row-fill space-between wrap">
+          <div class="example-quard-width col">
+            <mat-label>2021 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2021"
+                autocomplete=""
+                formControlName="last_years"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('last_years')?.hasError('required') &&
+                  form.get('last_years')?.touched
+                "
+                >ⓘ Please enter 2021 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="example-quard-width">
+            <mat-label>2020*</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2020"
+                autocomplete=""
+                formControlName="last2_years"
+                required
+              />
+              <mat-error
+                *ngIf="
+                form.get('last2_years')?.touched &&
+                form.get('last2_years')?.hasError('required')
+                "
+                >ⓘ Please enter 2020 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="example-quard-width">
+            <mat-label>2019 *</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                matInput
+                placeholder="2019"
+                autocomplete=""
+                formControlName="last3_years"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.get('last3_years')?.hasError('required') &&
+                  form.get('last3_years')?.touched
+                "
+                >ⓘ Please enter 2019 – it's required</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="row-fill space-between">
+    <button mat-button (click)="prevClick()">Prev</button>
+    <button mat-button (click)="nextClick()">Next</button>
+  </mat-card-actions>
+</mat-card>

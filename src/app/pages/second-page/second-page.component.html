@@ -1,0 +1,72 @@
+<mat-card>
+  <mat-card-title class="bgcolor">ORGANISATION DETAILS</mat-card-title>
+  <mat-card-content>
+    <form class="example-form" [formGroup]="form">
+      <!-- <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Company (disabled)</mat-label>
+        <input matInput disabled value="Google">
+      </mat-form-field> -->
+
+      <div class="row-fill space-between">
+        <div class="example-half-width col">
+          <mat-label>Name of Contact *</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Name" autocomplete=""
+            formControlName="contact_name" required />
+            <mat-error
+            *ngIf="
+              form.get('contact_name')?.hasError('required') && form.get('contact_name')?.touched
+            "
+            >ⓘ Please enter your contact name – it's required</mat-error
+          >
+          </mat-form-field>
+        </div>
+        <div class="example-half-width col">
+          <mat-label>Designation *</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Designation" autocomplete=""
+            formControlName="designation"required />
+            <mat-error
+            *ngIf="
+              form.get('designation')?.hasError('required') && form.get('designation')?.touched
+            "
+            >ⓘ Please enter your designation – it's required</mat-error
+          >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row-fill space-between">
+        <div class="example-half-width col">
+          <mat-label>Official Mobile No * </mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Mobile No" autocomplete=""
+            formControlName="mobile_no" required />
+            <mat-error
+            *ngIf="
+              form.get('mobile_no')?.hasError('required') && form.get('mobile_no')?.touched
+            "
+            >ⓘ Please enter your Mobile No – it's required</mat-error
+          >
+          </mat-form-field>
+        </div>
+        <div class="example-half-width col">
+          <mat-label>Official Email Address * </mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="email" autocomplete=""
+            formControlName="email" required/>
+            <mat-error
+            *ngIf="
+              form.get('email')?.hasError('required') && form.get('email')?.touched
+            "
+            >ⓘ Please enter your email – it's required</mat-error
+          >
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="row-fill space-between">
+    <button mat-button (click)="prevClick()">Prev</button>
+    <button mat-button (click)="nextClick()">Next</button>
+  </mat-card-actions>
+</mat-card>

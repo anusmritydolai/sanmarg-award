@@ -1,0 +1,86 @@
+<mat-card>
+    <mat-card-title class="bgcolor">Registration Form</mat-card-title>
+    <mat-card-content>
+      <form class="example-form"
+      [formGroup]="form">
+        <!-- <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Company (disabled)</mat-label>
+          <input matInput disabled value="Google">
+        </mat-form-field> -->
+        <div class="row-fill center">
+          <div class="example-full-width col">
+            <mat-label>Name *</mat-label>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Name" autocomplete=""
+              formControlName="name" required>
+              <mat-icon matSuffix>account_circle</mat-icon>
+              <mat-error
+              *ngIf="
+                form.get('name')?.hasError('required') && form.get('name')?.touched
+              "
+              >ⓘ Please enter name – it's required</mat-error
+            >
+            </mat-form-field>
+          </div>
+        </div>
+         <div class="row-fill  center">
+        <div class="example-full-width col ">
+            <mat-label>Email *</mat-label>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Email" autocomplete=""
+              formControlName="email" required>
+              <mat-icon matSuffix>email</mat-icon>
+              <mat-error
+              *ngIf="
+                form.get('email')?.hasError('required') && form.get('email')?.touched
+              "
+              >ⓘ Please enter email – it's required</mat-error
+            >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row-fill center">
+            <div class="example-full-width col">
+              <mat-label>Mobile No *</mat-label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Mobile No" autocomplete=""
+                formControlName="mobile_no" required>
+                <mat-icon matSuffix>phone</mat-icon>
+
+                <mat-error
+                *ngIf="
+                  form.get('mobile_no')?.hasError('required') && form.get('mobile_no')?.touched
+                "
+                >ⓘ Please enter mobile_no – it's required</mat-error
+              >
+              </mat-form-field>
+            </div>
+          </div>
+           <div class="row-fill  center">
+          <div class="example-full-width col ">
+              <mat-label>Password *</mat-label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Password" autocomplete=""
+                formControlName="password" required>
+                <mat-icon matSuffix>vpn_key</mat-icon>
+                <mat-error
+                *ngIf="
+                  form.get('password')?.hasError('required') && form.get('password')?.touched
+                "
+                >ⓘ Please enter password – it's required</mat-error
+              >
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row-fill center">
+          <button mat-raised-button class="btn-reg " (click)="Register()">Register</button>
+         </div>
+        </form>    
+    </mat-card-content>
+     <div class="row-fill center margin">
+
+        <span>already registered?
+        <a [routerLink]="['/login']" class="btn btn-link">Login</a></span>
+    </div>
+  </mat-card>
+  
