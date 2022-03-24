@@ -1,0 +1,231 @@
+<mat-card>
+    <mat-card-title class="bgcolor">HR PARACTICE</mat-card-title>
+    <mat-card-content>
+      <form class="example-form" [formGroup]="form">
+  
+
+
+  
+        <div class="row-fill space-between">
+          <div class="row space-between example-half-width">Number of Direct Employees</div>
+          <div class="row space-between example-half-width">Number of Indirect Employees</div>  
+        </div>
+        <div class="row-fill space-between">
+          <div class="row space-between example-half-width wrap">
+            <div class="example-quard-width col">
+              <mat-label>2021 *</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="2021"
+                  autocomplete=""
+                  formControlName="directlast_year"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                    form.get('directlast_year')?.hasError('required') &&
+                    form.get('directlast_year')?.touched
+                  "
+                  >ⓘ Please enter 2021 – it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div class="example-quard-width">
+              <mat-label>2020*</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="2020"
+                  autocomplete=""
+                  formControlName="directlast2_year"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                  form.get('directlast2_year')?.touched &&
+                  form.get('directlast2_year')?.hasError('required')
+                  "
+                  >ⓘ Please enter 2020 – it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div class="example-quard-width">
+              <mat-label>2019 *</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="2019"
+                  autocomplete=""
+                  formControlName="directlast3_year"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                    form.get('directlast3_year')?.hasError('required') &&
+                    form.get('directlast3_year')?.touched
+                  "
+                  >ⓘ Please enter 2019 – it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row space-between example-half-width wrap">
+            <div class="example-quard-width">
+              <mat-label>2021</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="2021"
+                  autocomplete=""
+                  formControlName="indirect_lastyear"
+                  
+                />
+              </mat-form-field>
+            </div>
+            <div class="example-quard-width">
+              <mat-label>2020</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="2020"
+                  autocomplete=""
+                  formControlName="indirect_last2year"
+                />
+              </mat-form-field>
+            </div>
+            <div class="example-quard-width">
+              <mat-label>2019</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="2019"
+                  autocomplete=""
+                  formControlName="indirect_last3year"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row-fill space-between">
+          <div class="row space-between example-half-width">Total Employee Compensation (in Lakhs)</div>
+          <div class="row space-between example-half-width">Female: Male Ratio of employees</div>  
+        </div>
+        <div class="row-fill space-between">
+          <div class="row space-between example-half-width wrap">
+            <div class="example-quard-width col">
+              <mat-label>2021 *</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="2021"
+                  autocomplete=""
+                  formControlName="total_years"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                    form.get('total_years')?.hasError('required') &&
+                    form.get('total_years')?.touched
+                  "
+                  >ⓘ Please enter 2021 – it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div class="example-quard-width">
+              <mat-label>2020*</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="2020"
+                  autocomplete=""
+                  formControlName="total2_years"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                  form.get('total2_years')?.touched &&
+                  form.get('total2_years')?.hasError('required')
+                  "
+                  >ⓘ Please enter 2020 – it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div class="example-quard-width">
+              <mat-label>2019 *</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="2019"
+                  autocomplete=""
+                  formControlName="total3_years"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                    form.get('total3_years')?.hasError('required') &&
+                    form.get('total3_years')?.touched
+                  "
+                  >ⓘ Please enter 2019 – it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row space-between example-half-width wrap">
+            <div class="example-full-width">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="Female:Male"
+                  autocomplete=""
+                  formControlName="female"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                    form.get('female')?.hasError('required') &&
+                    form.get('female')?.touched
+                  "
+                  >ⓘ Please enter  female – it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+
+  
+          </div>
+        </div>
+  
+
+
+
+        <div class="row-fill">
+            <div class="example-full-width col">
+              <mat-label>Best Continued HR paractice in last 5 years *</mat-label>
+              <mat-form-field appearance="outline">
+                <textarea
+                  matInput
+                  placeholder="(only 200 words allowed)"
+                  autocomplete=""
+                  formControlName="hr_paractice"
+                  required
+                >
+                </textarea>
+                <mat-error
+                  *ngIf="
+                    form.get('hr_paractice')?.hasError('required') &&
+                    form.get('hr_paractice')?.touched
+                  "
+                  >ⓘ Please enter your HR paractice – it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="row-fill space-between">
+      <button mat-button (click)="prevClick()">Prev</button>
+      <button mat-button (click)="nextClick()">Next</button>
+    </mat-card-actions>
+  </mat-card>
+  

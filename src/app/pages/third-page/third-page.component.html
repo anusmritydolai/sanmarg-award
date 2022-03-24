@@ -305,88 +305,85 @@
 
         </div>
       </div>
+
+
       <div class="row-fill space-between">
         <div class="col flex1">
-          <div>Annual Turnover(in Lakhs)</div>
+          <div>Investments in West Bengal for FY 2020-21 (in Lakhs) *</div>
           <div class="example-full-width">
-            <mat-label>on 31st March 2021 *</mat-label>
+            <!-- <mat-label>on 31st March 2021 *</mat-label> -->
             <mat-form-field class="example-full-width" appearance="outline">
               <input
                 matInput
-                placeholder="2021"
+                placeholder="Investments in West Bengal"
                 autocomplete=""
-                formControlName="market_lastyear"
+                formControlName="investments_wb"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('market_lastyear')?.hasError('required') &&
-                  form.get('market_lastyear')?.touched
+                  form.get('investments_wb')?.hasError('required') &&
+                  form.get('investments_wb')?.touched
                 "
-                >ⓘ Please enter  2021 – it's required</mat-error
+                >ⓘ Please enter  Investment in west Bengal 2021 – it's required</mat-error
               >
             </mat-form-field>
           </div>
         </div>
         <!-- <div class="row space-between flex0"></div> -->
         <div class="col space-between flex2">
-          <div>Profit Before Taxes(in Lakhs)</div>
+          <div>Please provide a copy of the organisation's audited Annual Report for the financial year ended</div>
           <div class="row-fill space-between wrap">
           <div class="example-quard-width col">
-            <mat-label>2021 *</mat-label>
-            <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>31st March 2021 *</mat-label>
+            <mat-form-field style="width: 100%;" appearance="outline">
+              <button mat-raised-button class="sam" matSuffix (click)="f_input.click()">
+                Browse
+              </button>
+              <input type="text" readonly matInput formControlName="display" />
               <input
-                matInput
-                placeholder="2021"
-                autocomplete=""
-                formControlName="last_years"
-                required
+                type="file"
+                multiple
+                hidden
+                #f_input
+                (change)="handleFileInputChange(f_input?.files)"
               />
-              <mat-error
-                *ngIf="
-                  form.get('last_years')?.hasError('required') &&
-                  form.get('last_years')?.touched
-                "
-                >ⓘ Please enter 2021 – it's required</mat-error
-              >
+              <mat-error>this field is required</mat-error>
             </mat-form-field>
           </div>
           <div class="example-quard-width">
-            <mat-label>2020*</mat-label>
-            <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label> 31st March 2020*</mat-label>
+            <mat-form-field style="width: 100%;" appearance="outline">
+              <button mat-raised-button class="sam" matSuffix (click)="f2_input.click()">
+                Browse
+              </button>
+              <input type="text" readonly matInput formControlName="display2" />
               <input
-                matInput
-                placeholder="2020"
-                autocomplete=""
-                formControlName="last2_years"
-                required
+                type="file"
+                multiple
+                hidden
+                #f2_input
+                (change)="handleFileInput2Change(f2_input?.files)"
               />
-              <mat-error
-                *ngIf="
-                form.get('last2_years')?.touched &&
-                form.get('last2_years')?.hasError('required')
-                "
-                >ⓘ Please enter 2020 – it's required</mat-error
-              >
+              <mat-error>this field is required</mat-error>
             </mat-form-field>
           </div>
           <div class="example-quard-width">
-            <mat-label>2019 *</mat-label>
-            <mat-form-field class="example-full-width" appearance="outline">
+            
+            <mat-label>31st March 2019 *</mat-label>
+            <mat-form-field style="width: 100%;" appearance="outline">
+              <button mat-raised-button class="sam" matSuffix (click)="f3_input.click()">
+                Browse
+              </button>
+              <input type="text" readonly matInput formControlName="display3" />
               <input
-                matInput
-                placeholder="2019"
-                autocomplete=""
-                formControlName="last3_years"
-                required
+                type="file"
+                multiple
+                hidden
+                #f3_input
+                (change)="handleFileInput3Change(f3_input?.files)"
               />
-              <mat-error
-                *ngIf="
-                  form.get('last3_years')?.hasError('required') &&
-                  form.get('last3_years')?.touched
-                "
-                >ⓘ Please enter 2019 – it's required</mat-error
-              >
+              <mat-error>this field is required</mat-error>
             </mat-form-field>
           </div>
         </div>

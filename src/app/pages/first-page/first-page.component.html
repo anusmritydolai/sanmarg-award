@@ -206,10 +206,10 @@
         <mat-label>GST No * </mat-label>
       <mat-form-field appearance="outline">
         <input matInput placeholder="GST No" autocomplete=""
-        formControlName="gst_no" required>
+        formControlName="gst" required>
         <mat-error
         *ngIf="
-          form.get('gst_no')?.hasError('required') && form.get('gst_no')?.touched
+          form.get('gst')?.hasError('required') && form.get('gst')?.touched
         "
         >ⓘ Please enter your gst no – it's required</mat-error
       >

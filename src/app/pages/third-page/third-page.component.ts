@@ -50,7 +50,14 @@ export class ThirdPageComponent implements OnInit {
     last3_years: new FormControl('', [Validators.required]),
     market_lastyear: new FormControl('', [Validators.required]),
     market_last2year: new FormControl('', [Validators.required]),
-    market_last3year: new FormControl('', [Validators.required])
+    market_last3year: new FormControl('', [Validators.required]),
+    investments_wb: new FormControl('', [Validators.required]),
+    financial_lastyear: new FormControl('', [Validators.required]),
+    financial_last2year: new FormControl('', [Validators.required]),
+    financial_last3year: new FormControl('', [Validators.required]),
+    display: new FormControl("", [Validators.required]),
+    display2: new FormControl("", [Validators.required]),
+    display3: new FormControl("", [Validators.required])
   });
   constructor(private commonService: CommonService, private router: Router) { }
 
@@ -61,11 +68,45 @@ export class ThirdPageComponent implements OnInit {
     
     
     this.commonService.thirdPage = 'vhjvhhg';
-    this.router.navigate(['/fourth-page']);
+    this.router.navigate(['/hr-page']);
   }
 
   prevClick() {
     this.router.navigate(['/second-page']);
   }
 
+  file_store: FileList | undefined;
+  file_store3: FileList | undefined;
+  file_store2: FileList | undefined;
+
+  handleFileInputChange(l: any): void {
+    this.file_store = l;
+    if (l.length) {
+      const f = l[0];
+      const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
+      this.form.patchValue({'display': `${f.name}${count}`});
+    } else {
+      this.form.patchValue({'display': ''});
+    }
+  }
+  handleFileInput2Change(l: any): void {
+    this.file_store2 = l;
+    if (l.length) {
+      const f = l[0];
+      const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
+      this.form.patchValue({'display2': `${f.name}${count}`});
+    } else {
+      this.form.patchValue({'display2': ''});
+    }
+  }
+  handleFileInput3Change(l: any): void {
+    this.file_store3 = l;
+    if (l.length) {
+      const f = l[0];
+      const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
+      this.form.patchValue({'display3': `${f.name}${count}`});
+    } else {
+      this.form.patchValue({'display3': ''});
+    }
+  }
 }

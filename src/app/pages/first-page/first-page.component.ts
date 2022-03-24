@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { sample } from 'src/app/interfaces/form';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { CommonService } from 'src/app/services/common.service';
   styleUrls: ['./first-page.component.scss']
 })
 export class FirstPageComponent implements OnInit {
-    form: any = new FormGroup({
+    form: FormGroup = new FormGroup({
       company_name: new FormControl('', [Validators.required, Validators.maxLength(30)]),
       sector: new FormControl('', [Validators.required]),
       company_address: new FormControl('', [Validators.required]),
@@ -22,12 +23,12 @@ export class FirstPageComponent implements OnInit {
       facebook_page: new FormControl(''),
       linkedin_page: new FormControl('', [Validators.required]),
       cin_no: new FormControl(''),
-      gst_no: new FormControl('', [Validators.required]),
+      gst: new FormControl('', [Validators.required]),
     });
   constructor(private commonService: CommonService, private router: Router) { }
 
   ngOnInit(): void {
-
+    this.form.patchValue(sample);
 
   }
 

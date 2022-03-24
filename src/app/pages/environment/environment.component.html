@@ -1,0 +1,111 @@
+<mat-card>
+    <mat-card-title class="bgcolor">CONCIOUSNESS FOR ENVIRONMENT</mat-card-title>
+    <mat-card-content>
+      <form class="example-form" [formGroup]="form">
+  
+        <div class="row-fill">
+            <div class="example-full-width col">
+              <mat-label>State in Detail measures Taken Towards Reduction of Environmental Hazards and Adoption of Renewable Energy.  </mat-label>
+              <mat-label>Also Specify is outcome *</mat-label>
+              <mat-form-field appearance="outline">
+                <textarea
+                  matInput
+                  placeholder="(only 200 words allowed)"
+                  autocomplete=""
+                  formControlName="detail"
+                  required
+                >
+                </textarea>
+                <mat-error
+                  *ngIf="
+                    form.get('detail')?.hasError('required') &&
+                    form.get('detail')?.touched
+                  "
+                  >ⓘ Please enter your State in Detail  –  it's too long</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+
+
+        <div class="row-fill space-between">
+          <div class="row space-between example-half-width wrap">
+            <div class=" col">
+              <mat-label>Attach Suppoting Documents(if any) *</mat-label>
+              <mat-form-field style="width: 100%;" appearance="outline">
+                <button mat-raised-button class="sam" matSuffix (click)="f_input.click()">
+                  Browse
+                </button>
+                <input type="text" readonly matInput formControlName="display" />
+                <input
+                  type="file"
+                  multiple
+                  hidden
+                  #f_input
+                  (change)="handleFileInputChange(f_input?.files)"
+                />
+                <mat-error>this field is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row-fill space-between">
+          <div class="row space-between example-half-width">Total Employee Compensation (in Lakhs)</div>
+          <div class="row space-between example-half-width">Female: Male Ratio of employees</div>  
+        </div>
+        <div class="row-fill space-between">
+          <div class="row space-between example-half-width wrap">
+            <div class="col">
+              <mat-form-field style="width: 100%;" appearance="outline">
+                <button mat-raised-button class="sam" matSuffix (click)="f2_input.click()">
+                  Browse
+                </button>
+                <input type="text" readonly matInput formControlName="display2" />
+                <input
+                  type="file"
+                  multiple
+                  hidden
+                  #f2_input
+                  (change)="handleFileInput2Change(f2_input?.files)"
+                />
+                <mat-error>this field is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row space-between example-half-width wrap">
+            <div class="example-full-width">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input
+                  matInput
+                  placeholder="Female:Male"
+                  autocomplete=""
+                  formControlName="female"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                    form.get('female')?.hasError('required') &&
+                    form.get('female')?.touched
+                  "
+                  >ⓘ Please enter  female – it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+
+  
+          </div>
+        </div>
+  
+
+
+
+
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="row-fill space-between">
+      <button mat-button (click)="prevClick()">Prev</button>
+      <button mat-button (click)="nextClick()">Next</button>
+    </mat-card-actions>
+  </mat-card>
+  

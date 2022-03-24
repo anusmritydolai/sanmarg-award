@@ -14,6 +14,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { HrPracticesComponent } from './hr-practices/hr-practices.component';
+import { EnvironmentComponent } from './environment/environment.component';
+import { CrsInitiativesComponent } from './crs-initiatives/crs-initiatives.component';
+import { InnovationResearchDevelopmentComponent } from './innovation-research-development/innovation-research-development.component';
+import { OtherComponent } from './other/other.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +26,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     SecondPageComponent,
     ThirdPageComponent,
     LastPageComponent,
+    HrPracticesComponent,
+    EnvironmentComponent,
+    CrsInitiativesComponent,
+    InnovationResearchDevelopmentComponent,
+    OtherComponent,
   ],
   imports: [
     CommonModule,
