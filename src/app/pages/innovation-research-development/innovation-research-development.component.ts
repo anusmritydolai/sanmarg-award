@@ -11,11 +11,10 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class InnovationResearchDevelopmentComponent implements OnInit {
   form: FormGroup = new FormGroup({
-    csr_policy: new FormControl('', [Validators.required, Validators.maxLength(200)]),
-    doc_csr_policy: new FormControl(""),
-    display2: new FormControl("", [Validators.required]),
-    annual_csr_expense: new FormControl('', [Validators.required]),
-    perc_profit_csr: new FormControl('', [Validators.required]),
+    innov_rnd_impact: new FormControl('', [Validators.maxLength(200)]),
+    doc_innov_rnd: new FormControl(""),
+    annual_innov_rnd_expense: new FormControl("", [Validators.required]),
+    
   
   });
   constructor(private commonService: CommonService, private router: Router) { }
@@ -32,26 +31,16 @@ export class InnovationResearchDevelopmentComponent implements OnInit {
     this.router.navigate(['/crs-page']);
   }
   file_store: FileList | undefined;
-  file_store2: FileList | undefined;
 
   handleFileInputChange(l: any): void {
     this.file_store = l;
     if (l.length) {
       const f = l[0];
       const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
-      this.form.patchValue({'doc_csr_policy': `${f.name}${count}`});
+      this.form.patchValue({'doc_innov_rnd': `${f.name}${count}`});
     } else {
-      this.form.patchValue({'doc_csr_policy': ''});
+      this.form.patchValue({'doc_innov_rnd': ''});
     }
   }
-  handleFileInput2Change(l: any): void {
-    this.file_store2 = l;
-    if (l.length) {
-      const f = l[0];
-      const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
-      this.form.patchValue({'display2': `${f.name}${count}`});
-    } else {
-      this.form.patchValue({'display2': ''});
-    }
-  }
+
 }

@@ -24,9 +24,18 @@ export class RegistrationComponent implements OnInit {
 
   }
 
-  Register() {
-    this.router.navigate(['/first-page']);
-        this._snackBar.open('login successfull', 'ok');
+  register() {
+    if (this.form.valid) {
+      const data2 = this.form.value;
+    this.commonService.register(data2).subscribe((data: any)=>{
+      if (data.success==1)  {
+        this.router.navigate(['/login']);
+        this._snackBar.open(data.message, 'ok');
+      }
+      }, (error: any) => {
+        this.commonService.openSnackBar(error.error.message, 'Dismiss');
+      })
+    }
   }
  
 }

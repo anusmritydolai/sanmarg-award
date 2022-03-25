@@ -1,27 +1,26 @@
 
 <mat-card>
-    <mat-card-title class="bgcolor">CSR FOR INITIATIVES</mat-card-title>
+    <mat-card-title class="bgcolor">INNOVATION,RESEARCH & DEVELOPMENT</mat-card-title>
     <mat-card-content>
       <form class="example-form" [formGroup]="form">
   
         <div class="row-fill">
             <div class="example-full-width col">
-              <mat-label>State in Detail CSR Policies Adoption and outcome and outreach over the last 3 years *  </mat-label>
+              <mat-label>State in Detail Measures Taken in the Field of Innovation/R&D Its Impact Over the Last 3 Years </mat-label>
               <mat-form-field appearance="outline">
                 <textarea
                   matInput
                   placeholder="(only 200 words allowed)"
                   autocomplete=""
-                  formControlName="csr_policy"
-                  required
+                  formControlName="innov_rnd_impact"
                 >
                 </textarea>
                 <mat-error
                   *ngIf="
-                    form.get('csr_policy')?.hasError('required') &&
-                    form.get('csr_policy')?.touched
+                    form.get('innov_rnd_impact')?.hasError('maxLength') &&
+                    form.get('innov_rnd_impact')?.touched
                   "
-                  >ⓘ Please enter your State in CSR policy  –  it's required</mat-error
+                  >ⓘ Please enter your  Innovation/R&D  –  it's too long</mat-error
                 >
               </mat-form-field>
             </div>
@@ -31,12 +30,12 @@
         <div class="row-fill space-between wrap">
           <div class="row example-quard-width">
             <div class=" col">
-              <mat-label>Attach CSR policy/Suppoting Documents(if any) </mat-label>
+              <mat-label>Attach Suppoting Documents(if any) </mat-label>
               <mat-form-field style="width: 100%;" appearance="outline">
                 <button mat-raised-button class="sam" matSuffix (click)="f_input.click()">
                   Browse
                 </button>
-                <input type="text" readonly matInput formControlName="doc_csr_policy" />
+                <input type="text" readonly matInput formControlName="doc_innov_rnd" />
                 <input
                   type="file"
                   multiple
@@ -47,33 +46,29 @@
               </mat-form-field>
             </div>
           </div>
-          <div class="example-quard-width col">
-            <mat-label>Annual CSR expenditure(in Lakhs) *</mat-label>
-          <mat-form-field appearance="outline">
-            <input matInput placeholder="expenditure" autocomplete=""
-            formControlName="annual_csr_expense">
-            <mat-error
-            *ngIf="
-              form.get('annual_csr_expense')?.hasError('required') && form.get('annual_csr_expense')?.touched
-            "
-            >ⓘ Please enter your Annual CSR expenditure– it's required</mat-error
-          >
-          </mat-form-field>
+        </div>
+         
+          <div class="row-fill">
+            <div class="example-half-width col">
+              <mat-label>Annual expenditure on Innovation/R & D (in Lakhs) *</mat-label>
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  placeholder="(expenditure)"
+                  autocomplete=""
+                  formControlName="annual_innov_rnd_expense"
+                >
+                <mat-error
+                  *ngIf="
+                    form.get('annual_innov_rnd_expense')?.hasError('required') &&
+                    form.get('annual_innov_rnd_expense')?.touched
+                  "
+                  >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
           </div>
-          <div class="example-quard-width ">
-            <mat-label>% of profit earmarked for CSR * </mat-label>
-          <mat-form-field appearance="outline">
-            <input matInput placeholder="expenditure" autocomplete=""
-            formControlName="perc_profit_csr" required>
-            <mat-error
-            *ngIf="
-              form.get('perc_profit_csr')?.hasError('required') && form.get('perc_profit_csr')?.touched
-            "
-            >ⓘ Please enter your gst no – it's required</mat-error
-          >
-          </mat-form-field>
-        </div>
-        </div>
+       
       </form>
     </mat-card-content>
     <mat-card-actions class="row-fill space-between">

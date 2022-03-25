@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
@@ -11,17 +12,28 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class LoginComponent implements OnInit {
   form: any = new FormGroup({
-    username: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private router: Router, private _snackBar: MatSnackBar, private commonService: CommonService) { }
+  constructor(private router: Router, private _snackBar: MatSnackBar, private commonService: CommonService, private adminService: AdminService) { }
 
   ngOnInit(): void {
   }
   login() {
-    this.router.navigate(['admin/dashboard']);
-    this._snackBar.open('login successfull', 'ok');
+    if (this.form.valid) {
+      const data = this.form.value;
+      this.adminService.login(data.email, data.password).subscribe((data: any)=>{
+        if (data.success==1)  {
+          this.router.navigate(['admin/dashboard']);
+          this._snackBar.open('login successfull', 'ok');}
+        }, (error: any) => {
+          this.openSnackBar(error.error.message, 'Dismiss');
+  
+        })
+      }
+  
+   
   }
 
   openSnackBar(message: string, action: string = 'Cancel') {

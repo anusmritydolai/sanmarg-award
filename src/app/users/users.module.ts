@@ -10,7 +10,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RegistrationComponent } from './registration/registration.component';
-import { LogoutComponent } from './logout/logout.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 
@@ -18,7 +17,6 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     LoginComponent,
     RegistrationComponent,
-    LogoutComponent
   ],
   imports: [
     CommonModule,

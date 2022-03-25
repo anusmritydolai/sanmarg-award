@@ -40,7 +40,7 @@
           <mat-label>Official Mobile No * </mat-label>
           <mat-form-field appearance="outline">
             <input matInput placeholder="Mobile No" autocomplete=""
-            formControlName="mobile_no" required />
+            formControlName="mobile_no" [clearIfNotMatch]="false" mask="000 000 0000" required />
             <mat-error
             *ngIf="
               form.get('mobile_no')?.hasError('required') && form.get('mobile_no')?.touched

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { sample } from 'src/app/interfaces/form';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
@@ -28,8 +27,9 @@ export class FirstPageComponent implements OnInit {
   constructor(private commonService: CommonService, private router: Router) { }
 
   ngOnInit(): void {
-    this.form.patchValue(sample);
-
+    this.commonService.getDataObservable.subscribe(data => {
+      this.form.patchValue(data);
+    })
   }
 
   nextClick() {

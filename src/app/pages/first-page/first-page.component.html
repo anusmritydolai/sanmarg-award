@@ -149,7 +149,7 @@
       <mat-label>Pincode *</mat-label>
       <mat-form-field appearance="outline">
         <input matInput placeholder="Pincode" autocomplete=""
-        formControlName="pincode" required>
+        formControlName="pincode" mask="000000" required>
         <mat-error
         *ngIf="
           form.get('pincode')?.hasError('required') && form.get('pincode')?.touched

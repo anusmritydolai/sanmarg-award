@@ -20,6 +20,12 @@ import { CrsInitiativesComponent } from './crs-initiatives/crs-initiatives.compo
 import { InnovationResearchDevelopmentComponent } from './innovation-research-development/innovation-research-development.component';
 import { OtherComponent } from './other/other.component';
 import { LayoutComponent } from './layout/layout.component';
+import { NgxMaskModule } from 'ngx-mask';
+import { LogoutComponent } from '../users/logout/logout.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+// import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -33,14 +39,15 @@ import { LayoutComponent } from './layout/layout.component';
     InnovationResearchDevelopmentComponent,
     OtherComponent,
     LayoutComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    MatButtonModule,
+    MatButtonModule, MatIconModule,
     FormsModule, ReactiveFormsModule, MatFormFieldModule,
-    MatCardModule, MatInputModule, MatSelectModule, MatDatepickerModule
-    
+    MatCardModule, MatInputModule, MatSelectModule, MatDatepickerModule,
+    NgxMaskModule.forRoot(), MatSnackBarModule, MatDialogModule
   ]
 })
 export class PagesModule { }

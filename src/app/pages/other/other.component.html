@@ -1,1 +1,151 @@
-<p>other works!</p>
+
+<mat-card>
+    <mat-card-title class="bgcolor">INNOVATION,RESEARCH & DEVELOPMENT</mat-card-title>
+    <mat-card-content>
+      <form class="example-form" [formGroup]="form">
+  
+        <div class="row-fill">
+            <div class="example-full-width col">
+              <mat-label>State in Detail Measures Taken in the Field of Innovation/R&D Its Impact Over the Last 3 Years *</mat-label>
+              <mat-form-field appearance="outline">
+                <textarea
+                  matInput
+                  placeholder="(only 200 words allowed)"
+                  autocomplete=""
+                  formControlName="innov_rnd_impact"
+                >
+                </textarea>
+                <mat-error
+                  *ngIf="
+                    form.get('innov_rnd_impact')?.hasError('required') &&
+                    form.get('innov_rnd_impact')?.touched
+                  "
+                  >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                >
+                <mat-error
+                  *ngIf="
+                    form.get('innov_rnd_impact')?.hasError('maxLength') &&
+                    form.get('innov_rnd_impact')?.touched
+                  "
+                  >ⓘ Please enter your  Innovation/R&D  –  it's too long</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+
+
+
+         
+          <div class="row space-between wrap">
+            <div class="example-quater-width col ">
+              <mat-label>Annual expenditure on Innovation/R & D (in Lakhs) *</mat-label>
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  placeholder="(expenditure)"
+                  autocomplete=""
+                  formControlName="annual_innov_rnd_expense"
+                >
+                <mat-error
+                  *ngIf="
+                    form.get('annual_innov_rnd_expense')?.hasError('required') &&
+                    form.get('annual_innov_rnd_expense')?.touched
+                  "
+                  >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div class="example-quater-width col">
+                <mat-label>Annual expenditure on Innovation/R & D (in Lakhs) *</mat-label>
+                <mat-form-field appearance="outline">
+                  <input
+                    matInput
+                    placeholder="(expenditure)"
+                    autocomplete=""
+                    formControlName="annual_innov_rnd_expense"
+                  >
+                  <mat-error
+                    *ngIf="
+                      form.get('annual_innov_rnd_expense')?.hasError('required') &&
+                      form.get('annual_innov_rnd_expense')?.touched
+                    "
+                    >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                  >
+                </mat-form-field>
+              </div>
+
+              <div class="example-quater-width col">
+                <mat-label>Annual expenditure on Innovation/R & D (in Lakhs) *</mat-label>
+                <mat-form-field appearance="outline">
+                  <input
+                    matInput
+                    placeholder="(expenditure)"
+                    autocomplete=""
+                    formControlName="annual_innov_rnd_expense"
+                  >
+                  <mat-error
+                    *ngIf="
+                      form.get('annual_innov_rnd_expense')?.hasError('required') &&
+                      form.get('annual_innov_rnd_expense')?.touched
+                    "
+                    >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                  >
+                </mat-form-field>
+              </div>
+              <div class="example-quater-width col">
+                  <mat-label>Annual expenditure on Innovation/R & D (in Lakhs) *</mat-label>
+                  <mat-form-field appearance="outline">
+                    <input
+                      matInput
+                      placeholder="(expenditure)"
+                      autocomplete=""
+                      formControlName="annual_innov_rnd_expense"
+                    >
+                    <mat-error
+                      *ngIf="
+                        form.get('annual_innov_rnd_expense')?.hasError('required') &&
+                        form.get('annual_innov_rnd_expense')?.touched
+                      "
+                      >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                    >
+                  </mat-form-field>
+                </div>
+          </div>
+
+          <div class="row-fill">
+            <div class="example-full-width col">
+              <mat-label>State in Detail Measures Taken in the Field of Innovation/R&D Its Impact Over the Last 3 Years</mat-label>
+              <mat-form-field appearance="outline">
+                <textarea
+                  matInput
+                  placeholder="(only 200 words allowed)"
+                  autocomplete=""
+                  formControlName="innov_rnd_impact"
+                >
+                </textarea>
+                <mat-error
+                  *ngIf="
+                    form.get('innov_rnd_impact')?.hasError('required') &&
+                    form.get('innov_rnd_impact')?.touched
+                  "
+                  >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                >
+                <mat-error
+                  *ngIf="
+                    form.get('innov_rnd_impact')?.hasError('maxLength') &&
+                    form.get('innov_rnd_impact')?.touched
+                  "
+                  >ⓘ Please enter your  Innovation/R&D  –  it's too long</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+       
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="row-fill space-between">
+      <button mat-button (click)="prevClick()">Prev</button>
+      <button mat-button (click)="nextClick()">Next</button>
+    </mat-card-actions>
+  </mat-card>
+  

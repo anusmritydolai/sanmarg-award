@@ -21,8 +21,18 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   login() {
-    this.router.navigate(['/first-page']);
-        this._snackBar.open('login successfull', 'ok');
+    if (this.form.valid) {
+      const data = this.form.value;
+      this.commonService.login(data.username, data.password).subscribe(data=>{
+      if (data.success==1)  {
+        this.router.navigate(['/first-page']);
+        this._snackBar.open(data.message, 'ok');
+      }
+      }, (error: any) => {
+        this.openSnackBar(error.error.message, 'Dismiss');
+
+      })
+    }
   }
 
   openSnackBar(message: string, action: string = 'Cancel') {

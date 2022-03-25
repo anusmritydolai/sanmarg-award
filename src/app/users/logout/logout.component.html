@@ -1,1 +1,19 @@
-<p>logout works!</p>
+<div class="modal-header row-fill">
+    <!-- <h5 class="modal-title">{{data.name}}</h5> -->
+    <button mat-icon-button onfocus="blur()" (click)="dialogRef.close()">
+      <span class="material-icons" style="font-weight: 600">close</span>
+    </button>
+  </div>
+  <div class="modal-content">
+    <p>Are you sure you want to logout?</p>
+  </div>
+  <div class="modal-footer">
+    <button mat-button matDialogClose (click)="dialogRef.close()">No Thanks</button>
+    <button
+      mat-raised-button class="btn-logout "
+      (click)="logout()"
+    >
+      logout
+    </button>
+  </div>
+
