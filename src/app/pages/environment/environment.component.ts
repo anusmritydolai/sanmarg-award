@@ -10,16 +10,7 @@ import { CommonService } from 'src/app/services/common.service';
   styleUrls: ['./environment.component.scss']
 })
 export class EnvironmentComponent implements OnInit {
-  form: any = new FormGroup({
-    directlast_year: new FormControl('', [Validators.required]),
-    directlast2_year: new FormControl('', [Validators.required]),
-    directlast3_year: new FormControl('', [Validators.required]),
-    indirect_lastyear: new FormControl(''),
-    indirect_last2year: new FormControl(''),
-    indirect_last3year: new FormControl(''),
-    total_years: new FormControl('', [Validators.required]),
-    total2_years: new FormControl('', [Validators.required]),
-    total3_years: new FormControl('', [Validators.required]),
+  form: FormGroup = new FormGroup({
     female: new FormControl('', [Validators.required]),
     detail: new FormControl('', [Validators.required, Validators.maxLength(200)]),
     display: new FormControl("", [Validators.required]),
@@ -31,7 +22,7 @@ export class EnvironmentComponent implements OnInit {
   }
 
   nextClick() {
-    this.commonService.thirdPage = 'vhjvhhg';
+    this.commonService.evPage = 'vhjvhhg';
     this.router.navigate(['/crs-page']);
   }
 

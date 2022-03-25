@@ -98,18 +98,20 @@ body {
 mat-card {
   max-width: 880px;
   width: 84vw;
-  max-height: 82vh;
+  // max-height: 82vh;
   padding: 0 !important;
+  // flex: 1;
+  margin: 16px 0;
+  // margin-top: 108px;
 }
 
 mat-card-content {
   padding: 16px;
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  max-height: 62vh;
+  flex: 1;
 }
 
 mat-card-actions {

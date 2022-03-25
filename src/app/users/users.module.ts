@@ -23,12 +23,10 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    FormsModule, ReactiveFormsModule,
+    FormsModule,
     MatIconModule, MatButtonModule,
-    MatFormFieldModule,
     MatSnackBarModule, ReactiveFormsModule, MatFormFieldModule,
     MatCardModule, MatInputModule,
-    MatIconModule
   ]
 })
 export class UsersModule { }

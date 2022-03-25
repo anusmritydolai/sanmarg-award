@@ -1,0 +1,19 @@
+<div class="login-container">
+    <!-- <img class="oak-logo" src="/assets/OakInsightsLogo.svg"/> -->
+    <form [formGroup]="form" class="login-form">
+        <div>
+        <input type="text" placeholder="Username" formControlName="username"/>
+        <mat-error *ngIf="form.controls['username'].hasError('required') && form.controls['username']?.touched">ⓘ Please enter your username – it's
+            </mat-error>
+        <mat-error *ngIf="form.controls['username'].hasError('username') && !form.controls['username'].hasError('required')">ⓘ
+            Please enter a valid username – it's invalid</mat-error>
+        </div>
+        <div>
+            <input type="password" placeholder="Password" formControlName="password"/>
+        <mat-error *ngIf="form.controls['password'].hasError('required') && form.controls['password']?.touched">ⓘ Please enter your password – it's
+            </mat-error>
+        </div>
+        <button mat-raised-button class="btn-login" (click)="login()">Login</button>
+    </form>
+
+</div>

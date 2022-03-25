@@ -8,6 +8,9 @@ export class CommonService {
   firstPage: any;
   secondPage: any;
   thirdPage: any;
+  CrsPage: any;
+  evPage: any;
+  hrPage: any;
 
   constructor() { }
 

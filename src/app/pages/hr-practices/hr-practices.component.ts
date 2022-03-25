@@ -29,7 +29,7 @@ export class HrPracticesComponent implements OnInit  {
   }
 
   nextClick() {
-    this.commonService.thirdPage = 'vhjvhhg';
+    this.commonService.hrPage = 'vhjvhhg';
     this.router.navigate(['/ev-page']);
   }
 

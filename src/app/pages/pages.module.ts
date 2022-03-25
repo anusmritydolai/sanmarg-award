@@ -19,6 +19,7 @@ import { EnvironmentComponent } from './environment/environment.component';
 import { CrsInitiativesComponent } from './crs-initiatives/crs-initiatives.component';
 import { InnovationResearchDevelopmentComponent } from './innovation-research-development/innovation-research-development.component';
 import { OtherComponent } from './other/other.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { OtherComponent } from './other/other.component';
     CrsInitiativesComponent,
     InnovationResearchDevelopmentComponent,
     OtherComponent,
+    LayoutComponent,
   ],
   imports: [
     CommonModule,

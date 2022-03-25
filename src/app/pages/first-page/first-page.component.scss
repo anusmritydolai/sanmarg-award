@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
+  padding-top: 16px;
 }
 
 .example-form {
