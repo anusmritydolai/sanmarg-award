@@ -21,10 +21,10 @@ import { InnovationResearchDevelopmentComponent } from './innovation-research-de
 import { OtherComponent } from './other/other.component';
 import { LayoutComponent } from './layout/layout.component';
 import { NgxMaskModule } from 'ngx-mask';
-import { LogoutComponent } from '../users/logout/logout.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { LogoutModule } from '../shared/logout/logout.module';
 // import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 @NgModule({
@@ -39,7 +39,6 @@ import { MatIconModule } from '@angular/material/icon';
     InnovationResearchDevelopmentComponent,
     OtherComponent,
     LayoutComponent,
-    LogoutComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +46,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule, MatIconModule,
     FormsModule, ReactiveFormsModule, MatFormFieldModule,
     MatCardModule, MatInputModule, MatSelectModule, MatDatepickerModule,
-    NgxMaskModule.forRoot(), MatSnackBarModule, MatDialogModule
+    NgxMaskModule.forRoot(), MatSnackBarModule, MatDialogModule,
+    LogoutModule
   ]
 })
 export class PagesModule { }

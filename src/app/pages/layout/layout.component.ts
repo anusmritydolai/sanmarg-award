@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LogoutComponent } from 'src/app/users/logout/logout.component';
+import { CommonService } from 'src/app/services/common.service';
+import { LogoutComponent } from 'src/app/shared/logout/logout.component';
 
 @Component({
   selector: 'app-layout',
@@ -10,7 +11,7 @@ import { LogoutComponent } from 'src/app/users/logout/logout.component';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private commonService: CommonService) {}
 
   ngOnInit(): void { }
 
@@ -20,7 +21,7 @@ export class LayoutComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      if (result === true) this.commonService.logout();
     });
   }
 }

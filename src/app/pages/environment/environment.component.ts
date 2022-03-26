@@ -19,6 +19,9 @@ export class EnvironmentComponent implements OnInit {
   constructor(private commonService: CommonService, private router: Router) { }
 
   ngOnInit(): void {
+    this.commonService.getDataObservable.subscribe(data => {
+      this.form.patchValue(data);
+    })
   }
 
   nextClick() {

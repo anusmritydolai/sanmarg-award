@@ -12,8 +12,6 @@ import { Form, sample } from '../interfaces/form';
 })
 export class CommonService {
   token: string | null = localStorage.getItem('token') || null;
-  firstPage: any;
-  secondPage: any;
   thirdPage: any;
   CrsPage: any;
   evPage: any;
@@ -44,8 +42,9 @@ export class CommonService {
         localStorage.setItem('token', res.data.token);
         this.token = res.data.token;
         delete res.data;
+        this.getData.next(sample);
+        this.getFormData();
       }
-      this.getFormData();
       return res;
     }));
   }
@@ -82,8 +81,17 @@ export class CommonService {
     return of('Submitted Successfully');
   }
 
-  update(data: any) {
-    
+  storeApplication(data: any) {
+    let params: any = {};
+    for (let [key, value] of Object.entries(data)) {
+        if (value !== '' && value != undefined)
+            params[key] = value;
+    }
+    return this.http.post(environment.baseUrl + 'application', params, { headers: { Authorization: `Bearer ${this.token}` } }).pipe(map(res=>{
+      console.log(res);
+      this.getFormData();
+      return res;
+    }));
   }
 
   openSnackBar(message: string, action: string = "close") {

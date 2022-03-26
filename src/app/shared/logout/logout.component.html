@@ -11,7 +11,7 @@
     <button mat-button matDialogClose (click)="dialogRef.close()">No Thanks</button>
     <button
       mat-raised-button class="btn-logout "
-      (click)="logout()"
+      (click)="dialogRef.close(true)"
     >
       logout
     </button>

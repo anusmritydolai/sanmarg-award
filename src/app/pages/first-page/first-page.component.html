@@ -99,11 +99,11 @@
           <mat-label>Registered company address (Line 1) * </mat-label>
         <mat-form-field appearance="outline">
           <textarea matInput placeholder="company address" autocomplete=""
-          formControlName="company_address" required>
+          formControlName="address_line_1" required>
           </textarea>
           <mat-error
           *ngIf="
-            form.get('company_address')?.hasError('required') && form.get('company_address')?.touched
+            form.get('address_line_1')?.hasError('required') && form.get('address_line_1')?.touched
           "
           >ⓘ Please enter your company address – it's required</mat-error
         >
@@ -113,7 +113,7 @@
           <mat-label>Registered company address (Line 2) </mat-label>
         <mat-form-field appearance="outline">
           <textarea matInput placeholder="company address" autocomplete=""
-          formControlName="company_address_2"></textarea>
+          formControlName="address_line_2"></textarea>
         </mat-form-field>
       </div>
     </div>
@@ -170,12 +170,12 @@
         <mat-label> Company Website *</mat-label>
         <mat-form-field appearance="outline">
           <input matInput placeholder="Company Website" autocomplete=""
-          formControlName="company_website" required>
+          formControlName="website" required>
           <mat-error
         *ngIf="
-          form.get('company_website')?.hasError('required') && form.get('company_website')?.touched
+          form.get('website')?.hasError('required') && form.get('website')?.touched
         "
-        >ⓘ Please enter company_website – it's required</mat-error
+        >ⓘ Please enter website – it's required</mat-error
       >
         </mat-form-field>
       </div>
@@ -183,14 +183,14 @@
         <mat-label>Facebook Page</mat-label>
         <mat-form-field appearance="outline">
           <input matInput placeholder="Facebook Page" autocomplete=""
-          formControlName="facebook_page" >
+          formControlName="facebook" >
         </mat-form-field>
       </div>
     <div class="example-quard-width col">
       <mat-label>Linkedin Page</mat-label>
       <mat-form-field appearance="outline">
         <input matInput placeholder="Linkedin Page" autocomplete=""
-        formControlName="linkedin_page">
+        formControlName="linkedin">
       </mat-form-field>
     </div>
     </div>
@@ -199,14 +199,14 @@
         <mat-label>CIN No  </mat-label>
       <mat-form-field appearance="outline">
         <input matInput placeholder="CIN No" autocomplete=""
-        formControlName="cin_no">
+        formControlName="cin">
       </mat-form-field>
       </div>
       <div class="example-half-width col">
         <mat-label>GST No * </mat-label>
       <mat-form-field appearance="outline">
         <input matInput placeholder="GST No" autocomplete=""
-        formControlName="gst" required>
+        formControlName="gst" mask="00SSSSS0000S0S0" required>
         <mat-error
         *ngIf="
           form.get('gst')?.hasError('required') && form.get('gst')?.touched

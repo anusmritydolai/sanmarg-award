@@ -13,16 +13,16 @@ export class FirstPageComponent implements OnInit {
     form: FormGroup = new FormGroup({
       company_name: new FormControl('', [Validators.required, Validators.maxLength(30)]),
       sector: new FormControl('', [Validators.required]),
-      company_address: new FormControl('', [Validators.required]),
-      company_address_2: new FormControl(''),
+      address_line_1: new FormControl('', [Validators.required]),
+      address_line_2: new FormControl(''),
       city: new FormControl('', [Validators.required]),
       state: new FormControl('', [Validators.required]),
       pincode: new FormControl('', [Validators.required, Validators.maxLength(6)]),
-      company_website: new FormControl('', [Validators.required]),
-      facebook_page: new FormControl(''),
-      linkedin_page: new FormControl('', [Validators.required]),
-      cin_no: new FormControl(''),
+      cin: new FormControl(''),
       gst: new FormControl('', [Validators.required]),
+      website: new FormControl('', [Validators.required]),
+      facebook: new FormControl(''),
+      linkedin: new FormControl(''),
     });
   constructor(private commonService: CommonService, private router: Router) { }
 
@@ -33,8 +33,11 @@ export class FirstPageComponent implements OnInit {
   }
 
   nextClick() {
-    this.commonService.firstPage = 'hgfgfg';
-    this.router.navigate(['/second-page']);
+    if (this.form.valid) {
+      this.commonService.storeApplication(this.form.value).subscribe(data => {
+        this.router.navigate(['/second-page']);
+      })
+    } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }
 
 }

@@ -24,11 +24,11 @@
         <div class="example-half-width col">
           <mat-label>Designation *</mat-label>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Designation" autocomplete=""
-            formControlName="designation"required />
+            <input matInput placeholder="designation" autocomplete=""
+            formControlName="contact_desig" required />
             <mat-error
             *ngIf="
-              form.get('designation')?.hasError('required') && form.get('designation')?.touched
+              form.get('contact_desig')?.hasError('required') && form.get('contact_desig')?.touched
             "
             >ⓘ Please enter your designation – it's required</mat-error
           >
@@ -40,10 +40,10 @@
           <mat-label>Official Mobile No * </mat-label>
           <mat-form-field appearance="outline">
             <input matInput placeholder="Mobile No" autocomplete=""
-            formControlName="mobile_no" [clearIfNotMatch]="false" mask="000 000 0000" required />
+            formControlName="contact_mobile" [clearIfNotMatch]="false" mask="000 000 0000" required />
             <mat-error
             *ngIf="
-              form.get('mobile_no')?.hasError('required') && form.get('mobile_no')?.touched
+              form.get('contact_mobile')?.hasError('required') && form.get('contact_mobile')?.touched
             "
             >ⓘ Please enter your Mobile No – it's required</mat-error
           >
@@ -52,14 +52,20 @@
         <div class="example-half-width col">
           <mat-label>Official Email Address * </mat-label>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="email" autocomplete=""
-            formControlName="email" required/>
+            <input matInput placeholder="contact_email" autocomplete=""
+            formControlName="contact_email" required/>
             <mat-error
             *ngIf="
-              form.get('email')?.hasError('required') && form.get('email')?.touched
+              form.get('contact_email')?.hasError('required') && form.get('contact_email')?.touched
             "
-            >ⓘ Please enter your email – it's required</mat-error
+            >ⓘ Please enter your Email – it's required</mat-error
           >
+          <mat-error
+          *ngIf="
+            form.get('contact_email')?.hasError('email') && !form.get('contact_email')?.hasError('required')
+          "
+          >ⓘ Please enter your Email – it's required</mat-error
+        >
           </mat-form-field>
         </div>
       </div>

@@ -12,20 +12,27 @@ import { CommonService } from 'src/app/services/common.service';
 export class SecondPageComponent implements OnInit {
   form: any = new FormGroup({
     contact_name: new FormControl('', [Validators.required]),
-    designation: new FormControl('', [Validators.required]),
-    mobile_no: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
+    contact_desig: new FormControl('', [Validators.required]),
+    contact_mobile: new FormControl('', [Validators.required]),
+    contact_email: new FormControl('', [Validators.required, Validators.email]),
 
   });
   constructor(private commonService: CommonService, private router: Router) { }
 
   ngOnInit(): void {
+    this.commonService.getDataObservable.subscribe(data => {
+      this.form.patchValue(data);
+    })
   }
 
   nextClick() {
-    this.commonService.secondPage = 'vhjvhhg';
-    this.router.navigate(['/third-page']);
+    if (this.form.valid) {
+      this.commonService.storeApplication(this.form.value).subscribe(data => {
+        this.router.navigate(['/third-page']);
+      })
+    } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }
+   
 
   prevClick() {
     this.router.navigate(['/first-page']);
