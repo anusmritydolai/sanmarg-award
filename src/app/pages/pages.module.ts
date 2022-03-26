@@ -7,7 +7,6 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { SecondPageComponent } from './second-page/second-page.component';
 import { ThirdPageComponent } from './third-page/third-page.component';
-import { LastPageComponent } from './last-page/last-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
@@ -21,8 +20,6 @@ import { InnovationResearchDevelopmentComponent } from './innovation-research-de
 import { OtherComponent } from './other/other.component';
 import { LayoutComponent } from './layout/layout.component';
 import { NgxMaskModule } from 'ngx-mask';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { LogoutModule } from '../shared/logout/logout.module';
 // import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -32,7 +29,6 @@ import { LogoutModule } from '../shared/logout/logout.module';
     FirstPageComponent,
     SecondPageComponent,
     ThirdPageComponent,
-    LastPageComponent,
     HrPracticesComponent,
     EnvironmentComponent,
     CrsInitiativesComponent,
@@ -46,7 +42,7 @@ import { LogoutModule } from '../shared/logout/logout.module';
     MatButtonModule, MatIconModule,
     FormsModule, ReactiveFormsModule, MatFormFieldModule,
     MatCardModule, MatInputModule, MatSelectModule, MatDatepickerModule,
-    NgxMaskModule.forRoot(), MatSnackBarModule, MatDialogModule,
+    NgxMaskModule.forRoot(),
     LogoutModule
   ]
 })

@@ -11,7 +11,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule } from '@angular/material/dialog';
 import { LogoutModule } from '../shared/logout/logout.module';
 
 
@@ -26,7 +25,7 @@ import { LogoutModule } from '../shared/logout/logout.module';
     AdminRoutingModule,
     FormsModule,
     MatSnackBarModule, ReactiveFormsModule, MatFormFieldModule,
-    MatInputModule, MatDialogModule,
+    MatInputModule,
     MatButtonModule, MatIconModule,
     LogoutModule
   ]

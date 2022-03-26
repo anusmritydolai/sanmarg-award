@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -10,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AdminService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private _snackBar: MatSnackBar) { }
   login(email: string, password: string): Observable<any> {
     const formData = new FormData();
     formData.append('email', email);
@@ -43,5 +44,8 @@ export class AdminService {
       this.router.navigate(['/admin/login']);
     }
   }
-  
+
+  openSnackBar(message: string, action: string = "close") {
+    this._snackBar.open(message, action, {duration: 3000});
+  }
 }

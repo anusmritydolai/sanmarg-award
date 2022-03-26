@@ -135,3 +135,22 @@ mat-card-title {
 .example-full-width, .example-half-width, .example-quard-width, .width {
   min-width: 120px;
 }
+
+.example-full-width { width: 100%; }
+.example-half-width { width: 48%; }
+.width { width: 80%; }
+.example-quard-width { width: 30%; }
+.flex1 { width: 38%; }
+.flex2 { width: 58%; }
+.flex0 { width: 4%; }
+
+.bgcolor {
+  background-color: #85c1e9;
+  color: white;
+}
+
+.example-form {
+  min-width: 150px;
+  //   max-width: 500px;
+  width: 100%;
+}

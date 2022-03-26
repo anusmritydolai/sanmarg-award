@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RegistrationComponent } from './registration/registration.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -23,7 +22,7 @@ import { MatInputModule } from '@angular/material/input';
     UsersRoutingModule,
     FormsModule,
     MatIconModule, MatButtonModule,
-    MatSnackBarModule, ReactiveFormsModule, MatFormFieldModule,
+    ReactiveFormsModule, MatFormFieldModule,
     MatCardModule, MatInputModule,
   ]
 })

@@ -11,7 +11,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private router: Router, private _snackBar: MatSnackBar, private commonService: CommonService,
+  constructor(private commonService: CommonService,
     public dialogRef: MatDialogRef<LogoutComponent>,
   ) { }
 

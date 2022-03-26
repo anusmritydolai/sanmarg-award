@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
-import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +14,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private router: Router, private _snackBar: MatSnackBar, private commonService: CommonService, private adminService: AdminService) { }
+  constructor(private router: Router, private adminService: AdminService) { }
 
   ngOnInit(): void {
   }
@@ -26,9 +24,9 @@ export class LoginComponent implements OnInit {
       this.adminService.login(data.email, data.password).subscribe((data: any)=>{
         if (data.success==1)  {
           this.router.navigate(['admin/dashboard']);
-          this._snackBar.open('login successfull', 'ok');}
+          this.adminService.openSnackBar('login successfull', 'ok');}
         }, (error: any) => {
-          this.openSnackBar(error.error.message, 'Dismiss');
+          this.adminService.openSnackBar(error.error.message, 'Dismiss');
   
         })
       }
@@ -36,7 +34,4 @@ export class LoginComponent implements OnInit {
    
   }
 
-  openSnackBar(message: string, action: string = 'Cancel') {
-    this._snackBar.open(message, action, { duration: 3000 });
-  }
 }

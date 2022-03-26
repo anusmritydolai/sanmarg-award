@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Form, sample } from '../interfaces/form';
 
@@ -24,7 +24,7 @@ export class CommonService {
   }
 
   getFormData() {
-    this.http.get(environment.baseUrl + 'application', { headers: { Authorization: `Bearer ${this.token}` } }).subscribe((response: any) => {
+    this.http.get(environment.baseUrl + 'application', { headers: { Authorization: `Bearer ${this.token}` } }).pipe(first()).subscribe((response: any) => {
       console.log(response);
       if (response.success === 1) this.getData.next(response.data.application);
     }, err => {
@@ -75,20 +75,16 @@ export class CommonService {
       this.router.navigate(['/login']);
     }
   }
-  
-
-  lastPageSubmit(data: any): Observable<any> {
-    return of('Submitted Successfully');
-  }
 
   storeApplication(data: any) {
+    const x = {...this.getData.getValue(), ...data};
+    if(JSON.stringify(x) === JSON.stringify(this.getData.getValue())) return of('Nothing to update.');
     let params: any = {};
     for (let [key, value] of Object.entries(data)) {
         if (value !== '' && value != undefined)
             params[key] = value;
     }
     return this.http.post(environment.baseUrl + 'application', params, { headers: { Authorization: `Bearer ${this.token}` } }).pipe(map(res=>{
-      console.log(res);
       this.getFormData();
       return res;
     }));

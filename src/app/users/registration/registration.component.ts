@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
 
@@ -17,12 +16,9 @@ export class RegistrationComponent implements OnInit {
    mobile_no: new FormControl('', [Validators.required]),
    password: new FormControl('', [Validators.required]),
   });
-  constructor(private commonService: CommonService, private router: Router, private _snackBar: MatSnackBar) { }
+  constructor(private commonService: CommonService, private router: Router) { }
 
-  ngOnInit(): void {
-
-
-  }
+  ngOnInit(): void { }
 
   register() {
     if (this.form.valid) {
@@ -30,7 +26,7 @@ export class RegistrationComponent implements OnInit {
     this.commonService.register(data2).subscribe((data: any)=>{
       if (data.success==1)  {
         this.router.navigate(['/login']);
-        this._snackBar.open(data.message, 'ok');
+        this.commonService.openSnackBar(data.message, 'ok');
       }
       }, (error: any) => {
         this.commonService.openSnackBar(error.error.message, 'Dismiss');
