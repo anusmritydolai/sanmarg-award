@@ -5,7 +5,7 @@ import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-crs-initiatives',
-  host: { class: 'col-fill scroll-y' },
+  host: { class: 'col align-center' },
   templateUrl: './crs-initiatives.component.html',
   styleUrls: ['./crs-initiatives.component.scss']
 })

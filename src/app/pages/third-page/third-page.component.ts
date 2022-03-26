@@ -20,7 +20,7 @@ export const MY_FORMATS = {
 
 @Component({
   selector: 'app-third-page',
-  host: { class: 'col-fill scroll-y' },
+  host: { class: 'col align-center' },
   templateUrl: './third-page.component.html',
   styleUrls: ['./third-page.component.scss'],
   providers: [

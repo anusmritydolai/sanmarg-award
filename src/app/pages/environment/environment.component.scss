@@ -1,52 +1,45 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .example-form {
-    min-width: 150px;
-    //   max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
-  .example-half-width {
-    width: 48%;
-  }
-  
-  .width {
-    width: 80%;
-  }
-  
-  .example-quard-width {
-    width: 30%;
-  }
-  
-  .bgcolor {
-    background-color: #85c1e9;
-    color: white;
-  }
+.example-form {
+  min-width: 150px;
+  //   max-width: 500px;
+  width: 100%;
+}
 
-  .flex1{
-    width: 38%;
-  }
+.example-full-width {
+  width: 100%;
+}
 
-  .flex2{
-    width: 58%;
-  }
+.example-half-width {
+  width: 48%;
+}
 
-  .flex0{
-    width: 4%;
-  }
+.width {
+  width: 80%;
+}
 
-  .sam {
-    position: absolute;
-    top: -2.2em;
-    left: -5em !important;
-    height: 3em;
-  }
+.example-quard-width {
+  width: 30%;
+}
+
+.bgcolor {
+  background-color: #85c1e9;
+  color: white;
+}
+
+.flex1 {
+  width: 38%;
+}
+
+.flex2 {
+  width: 58%;
+}
+
+.flex0 {
+  width: 4%;
+}
+
+.sam {
+  position: absolute;
+  top: -2.2em;
+  left: -5em !important;
+  height: 3em;
+}

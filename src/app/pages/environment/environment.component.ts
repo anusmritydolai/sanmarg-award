@@ -5,7 +5,7 @@ import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-environment',
-  host: { class: 'col-fill scroll-y' },
+  host: { class: 'col align-center' },
   templateUrl: './environment.component.html',
   styleUrls: ['./environment.component.scss']
 })

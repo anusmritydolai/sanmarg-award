@@ -5,7 +5,7 @@ import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-hr-practices',
-  host: { class: 'col-fill scroll-y' },
+  host: { class: 'col align-center' },
   templateUrl: './hr-practices.component.html',
   styleUrls: ['./hr-practices.component.scss'],
 })

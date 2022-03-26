@@ -5,7 +5,7 @@ import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-second-page',
-  host: { class: 'col-fill scroll-y' },
+  host: { class: 'col align-center' },
   templateUrl: './second-page.component.html',
   styleUrls: ['./second-page.component.scss']
 })

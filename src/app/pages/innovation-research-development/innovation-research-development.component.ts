@@ -5,7 +5,7 @@ import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-innovation-research-development',
-  host: { class: 'col-fill scroll-y' },
+  host: { class: 'col align-center' },
   templateUrl: './innovation-research-development.component.html',
   styleUrls: ['./innovation-research-development.component.scss']
 })
