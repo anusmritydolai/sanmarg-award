@@ -79,7 +79,7 @@ export class ThirdPageComponent implements OnInit {
   }
 
   prevClick() {
-    this.router.navigate(['/second-page']);
+    this.router.navigate(['/contact-details']);
   }
 
   file_store: File | undefined;

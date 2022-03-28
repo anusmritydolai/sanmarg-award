@@ -35,7 +35,7 @@ export class FirstPageComponent implements OnInit {
   nextClick() {
     if (this.form.valid) {
       this.commonService.storeApplication(this.form.value).subscribe(data => {
-        this.router.navigate(['/second-page']);
+        this.router.navigate(['/contact-details']);
       })
     } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }

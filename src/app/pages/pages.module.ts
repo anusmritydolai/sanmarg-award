@@ -22,6 +22,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { MatIconModule } from '@angular/material/icon';
 import { LogoutModule } from '../shared/logout/logout.module';
+import { PrevPopupModule } from '../shared/prev-popup/prev-popup.module';
 // import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 @NgModule({
@@ -43,7 +44,7 @@ import { LogoutModule } from '../shared/logout/logout.module';
     FormsModule, ReactiveFormsModule, MatFormFieldModule,
     MatCardModule, MatInputModule, MatSelectModule, MatDatepickerModule,
     NgxMaskModule.forRoot(),
-    LogoutModule
+    LogoutModule, PrevPopupModule
   ]
 })
 export class PagesModule { }

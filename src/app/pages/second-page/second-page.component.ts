@@ -28,14 +28,14 @@ export class SecondPageComponent implements OnInit {
   nextClick() {
     if (this.form.valid) {
       this.commonService.storeApplication(this.form.value).subscribe(data => {
-        this.router.navigate(['/third-page']);
+        this.router.navigate(['/business-overview']);
       })
     } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }
    
 
   prevClick() {
-    this.router.navigate(['/first-page']);
+    this.router.navigate(['/organisation-details']);
   }
 
 }

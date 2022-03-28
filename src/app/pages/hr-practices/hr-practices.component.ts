@@ -41,7 +41,7 @@ export class HrPracticesComponent implements OnInit  {
   }
 
   prevClick() {
-    this.router.navigate(['/third-page']);
+    this.router.navigate(['/business-overview']);
   }
   file_store: FileList | undefined;
   file_store2: FileList | undefined;

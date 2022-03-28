@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-title class="bgcolor">ORGANISATION DETAILS</mat-card-title>
+  <mat-card-title class="bgcolor">CONTACT DETAILS FOR ALL CORRESPONDENCE</mat-card-title>
   <mat-card-content>
     <form class="example-form" [formGroup]="form">
       <!-- <mat-form-field class="example-full-width" appearance="fill">
@@ -72,7 +72,7 @@
     </form>
   </mat-card-content>
   <mat-card-actions class="row-fill space-between">
-    <button mat-button (click)="prevClick()">Prev</button>
-    <button mat-button (click)="nextClick()">Next</button>
+    <button mat-button class="btn-prev" (click)="prevClick()">Prev</button>
+    <button mat-button class="btn-save" (click)="nextClick()">Save & Next</button>
   </mat-card-actions>
 </mat-card>

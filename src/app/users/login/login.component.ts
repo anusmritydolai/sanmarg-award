@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       const data = this.form.value;
       this.commonService.login(data.username, data.password).subscribe(data=>{
       if (data.success==1)  {
-        this.router.navigate(['/first-page']);
+        this.router.navigate(['//organisation-details']);
         this.commonService.openSnackBar(data.message, 'ok');
       }
       }, (error: any) => {

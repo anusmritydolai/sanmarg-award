@@ -14,6 +14,7 @@
 
 .fimg {
     height: 64px;
+    padding: 4px;
 }
 
 .header, .footer {
@@ -29,7 +30,7 @@
 }
 
 .footer {
-    height: 72px; width: 100vw;
+    width: 100vw;
     background-color: grey;
     width: calc(100vw - 12px) !important;
 

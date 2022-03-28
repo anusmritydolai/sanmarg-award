@@ -39,7 +39,19 @@ export class CrsInitiativesComponent implements OnInit {
   }
 
   prevClick() {
-    this.router.navigate(['/ev-page']);
+    this.commonService.prevClick().subscribe((data: number) => {
+      if (data === 1) {
+        if (this.form.valid) {
+          const data: any = this.form.value;
+          const x = [
+            { name: 'doc_csr_policy', file: this.file_store, fname: data.doc_csr_policy }
+          ]
+          this.commonService.storeApplication(data, x).subscribe(data => {
+            this.router.navigate(['/ev-page']);
+          })
+        } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
+      } else if (data === 0) this.router.navigate(['/ev-page']);
+    })
   }
   file_store: FileList | undefined;
 

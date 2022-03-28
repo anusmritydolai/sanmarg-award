@@ -11,14 +11,14 @@ import { SecondPageComponent } from './second-page/second-page.component';
 import { ThirdPageComponent } from './third-page/third-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'first-page' },
+  { path: '', redirectTo: 'organisation-details' },
   {
     path: '',
     component: LayoutComponent,
     children: [
-      { path: 'first-page', component: FirstPageComponent },
-      { path: 'second-page', component: SecondPageComponent },
-      { path: 'third-page', component: ThirdPageComponent },
+      { path: 'organisation-details', component: FirstPageComponent },
+      { path: 'contact-details', component: SecondPageComponent },
+      { path: 'business-overview', component: ThirdPageComponent },
       { path: 'hr-page', component: HrPracticesComponent },
       { path: 'ev-page', component: EnvironmentComponent },
       { path: 'crs-page', component: CrsInitiativesComponent },

@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Form, sample } from '../interfaces/form';
+import { PrevPopupComponent } from '../shared/prev-popup/prev-popup.component';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,7 @@ export class CommonService {
   getData: BehaviorSubject<Form> = new BehaviorSubject(sample);
   getDataObservable = this.getData.asObservable();
 
-  constructor(private http: HttpClient, private router: Router, private _snackBar: MatSnackBar) {
+  constructor(private http: HttpClient, private router: Router, private _snackBar: MatSnackBar, public dialog: MatDialog) {
     if(this.token) this.getFormData();
   }
 
@@ -91,5 +93,13 @@ export class CommonService {
 
   openSnackBar(message: string, action: string = "close") {
     this._snackBar.open(message, action, {duration: 3000});
+  }
+
+  prevClick(): Observable<number> {
+    const dialogRef = this.dialog.open(PrevPopupComponent, {
+      width: '350px',
+    });
+
+    return dialogRef.afterClosed();
   }
 }
