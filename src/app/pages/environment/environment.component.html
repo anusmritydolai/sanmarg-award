@@ -12,14 +12,14 @@
                   matInput
                   placeholder="(only 200 words allowed)"
                   autocomplete=""
-                  formControlName="detail"
+                  formControlName="env_hazard_renewable_energy"
                   required
                 >
                 </textarea>
                 <mat-error
                   *ngIf="
-                    form.get('detail')?.hasError('required') &&
-                    form.get('detail')?.touched
+                    form.get('env_hazard_renewable_energy')?.hasError('required') &&
+                    form.get('env_hazard_renewable_energy')?.touched
                   "
                   >ⓘ Please enter your State in Detail  –  it's too long</mat-error
                 >
@@ -36,7 +36,7 @@
                 <button mat-raised-button class="sam" matSuffix (click)="f_input.click()">
                   Browse
                 </button>
-                <input type="text" readonly matInput formControlName="display" />
+                <input type="text" readonly matInput formControlName="doc_env_supporting" />
                 <input
                   type="file"
                   multiple
@@ -51,8 +51,8 @@
         </div>
   
         <div class="row-fill space-between">
-          <div class="row space-between example-half-width">Total Employee Compensation (in Lakhs)</div>
-          <div class="row space-between example-half-width">Female: Male Ratio of employees</div>  
+          <div class="row space-between example-half-width"> Attach organisation's Environment Policy(if any)</div>
+          <div class="row space-between example-half-width">Expenditure incurred Towards Renewable Energy(in Lakhs) *</div>  
         </div>
         <div class="row-fill space-between">
           <div class="row space-between example-half-width wrap">
@@ -69,7 +69,7 @@
                   #f2_input
                   (change)="handleFileInput2Change(f2_input?.files)"
                 />
-                <mat-error>this field is required</mat-error>
+                <!-- <mat-error>this field is required</mat-error> -->
               </mat-form-field>
             </div>
           </div>
@@ -78,17 +78,17 @@
               <mat-form-field class="example-full-width" appearance="outline">
                 <input
                   matInput
-                  placeholder="Female:Male"
+                  placeholder="Expenditure"
                   autocomplete=""
-                  formControlName="female"
+                  formControlName="renewable_energy_expense"
                   required
                 />
                 <mat-error
                   *ngIf="
-                    form.get('female')?.hasError('required') &&
-                    form.get('female')?.touched
+                    form.get('renewable_energy_expense')?.hasError('required') &&
+                    form.get('renewable_energy_expense')?.touched
                   "
-                  >ⓘ Please enter  female – it's required</mat-error
+                  >ⓘ Please enter  Renewable Energy Expense – it's required</mat-error
                 >
               </mat-form-field>
             </div>

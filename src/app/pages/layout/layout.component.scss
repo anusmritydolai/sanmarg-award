@@ -2,20 +2,44 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #eeeeee;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.img {
+    height: 72px;
+    background-color: grey;
+
+}
+
+.fimg {
+    height: 64px;
+}
+
+.header, .footer {
     padding: 0 !important;
     margin: 0 !important;
 }
 
 .header {
-    padding: 0 !important;
-    margin: 0 !important;
-    height: 96px; background-color: white; width: 100vw;
+    height: 80px; width: 100vw;
+    background-color: white;
+    width: calc(100vw - 12px) !important;
+
+}
+
+.footer {
+    height: 72px; width: 100vw;
+    background-color: grey;
+    width: calc(100vw - 12px) !important;
+
 }
 
 .container {
-    height: calc(100vh - 96px) !important;
+    // height: calc(100vh - 96px) !important;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    background-color: #eeeeee;
+    min-height: 100vh;
 }

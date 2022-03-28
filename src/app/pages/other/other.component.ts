@@ -27,8 +27,11 @@ export class OtherComponent implements OnInit {
   }
 
   nextClick() {
-    this.commonService.CrsPage = 'vhjvhhg';
-    this.router.navigate(['/other-page']);
+    if (this.form.valid) {
+      this.commonService.storeApplication(this.form.value).subscribe(data => {
+        // this.router.navigate(['/third-page']);
+      }, err => this.commonService.openSnackBar(err.error.message))
+    } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }
 
   prevClick() {

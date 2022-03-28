@@ -19,13 +19,13 @@
                   matInput
                   placeholder="2021"
                   autocomplete=""
-                  formControlName="directlast_year"
+                  formControlName="direct_employees_2021"
                   required
                 />
                 <mat-error
                   *ngIf="
-                    form.get('directlast_year')?.hasError('required') &&
-                    form.get('directlast_year')?.touched
+                    form.get('direct_employees_2021')?.hasError('required') &&
+                    form.get('direct_employees_2021')?.touched
                   "
                   >ⓘ Please enter 2021 – it's required</mat-error
                 >
@@ -38,13 +38,13 @@
                   matInput
                   placeholder="2020"
                   autocomplete=""
-                  formControlName="directlast2_year"
+                  formControlName="direct_employees_2020"
                   required
                 />
                 <mat-error
                   *ngIf="
-                  form.get('directlast2_year')?.touched &&
-                  form.get('directlast2_year')?.hasError('required')
+                  form.get('direct_employees_2020')?.touched &&
+                  form.get('direct_employees_2020')?.hasError('required')
                   "
                   >ⓘ Please enter 2020 – it's required</mat-error
                 >
@@ -57,13 +57,13 @@
                   matInput
                   placeholder="2019"
                   autocomplete=""
-                  formControlName="directlast3_year"
+                  formControlName="direct_employees_2019"
                   required
                 />
                 <mat-error
                   *ngIf="
-                    form.get('directlast3_year')?.hasError('required') &&
-                    form.get('directlast3_year')?.touched
+                    form.get('direct_employees_2019')?.hasError('required') &&
+                    form.get('direct_employees_2019')?.touched
                   "
                   >ⓘ Please enter 2019 – it's required</mat-error
                 >
@@ -78,7 +78,7 @@
                   matInput
                   placeholder="2021"
                   autocomplete=""
-                  formControlName="indirect_lastyear"
+                  formControlName="indirect_employees_2021"
                   
                 />
               </mat-form-field>
@@ -90,7 +90,7 @@
                   matInput
                   placeholder="2020"
                   autocomplete=""
-                  formControlName="indirect_last2year"
+                  formControlName="indirect_employees_2020"
                 />
               </mat-form-field>
             </div>
@@ -101,7 +101,7 @@
                   matInput
                   placeholder="2019"
                   autocomplete=""
-                  formControlName="indirect_last3year"
+                  formControlName="indirect_employees_2019"
                 />
               </mat-form-field>
             </div>
@@ -121,13 +121,13 @@
                   matInput
                   placeholder="2021"
                   autocomplete=""
-                  formControlName="total_years"
+                  formControlName="total_emp_comp_2021"
                   required
                 />
                 <mat-error
                   *ngIf="
-                    form.get('total_years')?.hasError('required') &&
-                    form.get('total_years')?.touched
+                    form.get('total_emp_comp_2021')?.hasError('required') &&
+                    form.get('total_emp_comp_2021')?.touched
                   "
                   >ⓘ Please enter 2021 – it's required</mat-error
                 >
@@ -140,13 +140,13 @@
                   matInput
                   placeholder="2020"
                   autocomplete=""
-                  formControlName="total2_years"
+                  formControlName="total_emp_comp_2020"
                   required
                 />
                 <mat-error
                   *ngIf="
-                  form.get('total2_years')?.touched &&
-                  form.get('total2_years')?.hasError('required')
+                  form.get('total_emp_comp_2020')?.touched &&
+                  form.get('total_emp_comp_2020')?.hasError('required')
                   "
                   >ⓘ Please enter 2020 – it's required</mat-error
                 >
@@ -159,13 +159,13 @@
                   matInput
                   placeholder="2019"
                   autocomplete=""
-                  formControlName="total3_years"
+                  formControlName="total_emp_comp_2019"
                   required
                 />
                 <mat-error
                   *ngIf="
-                    form.get('total3_years')?.hasError('required') &&
-                    form.get('total3_years')?.touched
+                    form.get('total_emp_comp_2019')?.hasError('required') &&
+                    form.get('total_emp_comp_2019')?.touched
                   "
                   >ⓘ Please enter 2019 – it's required</mat-error
                 >
@@ -179,13 +179,13 @@
                   matInput
                   placeholder="Female:Male"
                   autocomplete=""
-                  formControlName="female"
+                  formControlName="female_male_ratio"
                   required
                 />
                 <mat-error
                   *ngIf="
-                    form.get('female')?.hasError('required') &&
-                    form.get('female')?.touched
+                    form.get('female_male_ratio')?.hasError('required') &&
+                    form.get('female_male_ratio')?.touched
                   "
                   >ⓘ Please enter  female – it's required</mat-error
                 >
@@ -207,14 +207,14 @@
                   matInput
                   placeholder="(only 200 words allowed)"
                   autocomplete=""
-                  formControlName="hr_paractice"
+                  formControlName="hr_practice"
                   required
                 >
                 </textarea>
                 <mat-error
                   *ngIf="
-                    form.get('hr_paractice')?.hasError('required') &&
-                    form.get('hr_paractice')?.touched
+                    form.get('hr_practice')?.hasError('required') &&
+                    form.get('hr_practice')?.touched
                   "
                   >ⓘ Please enter your HR paractice – it's required</mat-error
                 >

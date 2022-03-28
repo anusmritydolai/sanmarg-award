@@ -11,17 +11,17 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class HrPracticesComponent implements OnInit  {
   form: any = new FormGroup({
-    directlast_year: new FormControl('', [Validators.required]),
-    directlast2_year: new FormControl('', [Validators.required]),
-    directlast3_year: new FormControl('', [Validators.required]),
-    indirect_lastyear: new FormControl(''),
-    indirect_last2year: new FormControl(''),
-    indirect_last3year: new FormControl(''),
-    total_years: new FormControl('', [Validators.required]),
-    total2_years: new FormControl('', [Validators.required]),
-    total3_years: new FormControl('', [Validators.required]),
-    female: new FormControl('', [Validators.required]),
-    hr_paractice: new FormControl('', [Validators.required, Validators.maxLength(200)])
+    direct_employees_2021: new FormControl('', [Validators.required]),
+    direct_employees_2020: new FormControl('', [Validators.required]),
+    direct_employees_2019: new FormControl('', [Validators.required]),
+    indirect_employees_2021: new FormControl(''),
+    indirect_employees_2020: new FormControl(''),
+    indirect_employees_2019: new FormControl(''),
+    total_emp_comp_2021: new FormControl('', [Validators.required]),
+    total_emp_comp_2020: new FormControl('', [Validators.required]),
+    total_emp_comp_2019: new FormControl('', [Validators.required]),
+    female_male_ratio: new FormControl('', [Validators.required]),
+    hr_practice: new FormControl('', [Validators.required, Validators.maxLength(200)])
   });
   constructor(private commonService: CommonService, private router: Router) { }
 
@@ -31,9 +31,13 @@ export class HrPracticesComponent implements OnInit  {
     })
   }
 
+ 
   nextClick() {
-    this.commonService.hrPage = 'vhjvhhg';
-    this.router.navigate(['/ev-page']);
+    if (this.form.valid) {
+      this.commonService.storeApplication(this.form.value).subscribe(data => {
+        this.router.navigate(['/ev-page']);
+      })
+    } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }
 
   prevClick() {

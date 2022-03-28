@@ -25,9 +25,18 @@ export class InnovationResearchDevelopmentComponent implements OnInit {
     })
   }
 
+ 
+
   nextClick() {
-    this.commonService.CrsPage = 'vhjvhhg';
-    this.router.navigate(['/other-page']);
+    if (this.form.valid) {
+      const data: any = this.form.value;
+      const x = [
+        { name: 'doc_innov_rnd', file: this.file_store, fname: data.doc_innov_rnd }
+      ]
+      this.commonService.storeApplication(data, x).subscribe(data => {
+        this.router.navigate(['/other-page']);
+      })
+    } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }
 
   prevClick() {
@@ -36,9 +45,9 @@ export class InnovationResearchDevelopmentComponent implements OnInit {
   file_store: FileList | undefined;
 
   handleFileInputChange(l: any): void {
-    this.file_store = l;
     if (l.length) {
       const f = l[0];
+      this.file_store = f;
       const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
       this.form.patchValue({'doc_innov_rnd': `${f.name}${count}`});
     } else {

@@ -13,7 +13,6 @@ export class CrsInitiativesComponent implements OnInit {
   form: FormGroup = new FormGroup({
     csr_policy: new FormControl('', [Validators.required, Validators.maxLength(200)]),
     doc_csr_policy: new FormControl(""),
-    display2: new FormControl("", [Validators.required]),
     annual_csr_expense: new FormControl('', [Validators.required]),
     perc_profit_csr: new FormControl('', [Validators.required]),
   
@@ -26,35 +25,33 @@ export class CrsInitiativesComponent implements OnInit {
     })
   }
 
+
   nextClick() {
-    this.commonService.CrsPage = 'vhjvhhg';
-    this.router.navigate(['/ird-page']);
+    if (this.form.valid) {
+      const data: any = this.form.value;
+      const x = [
+        { name: 'doc_csr_policy', file: this.file_store, fname: data.doc_csr_policy }
+      ]
+      this.commonService.storeApplication(data, x).subscribe(data => {
+        this.router.navigate(['/ird-page']);
+      })
+    } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }
 
   prevClick() {
     this.router.navigate(['/ev-page']);
   }
   file_store: FileList | undefined;
-  file_store2: FileList | undefined;
 
   handleFileInputChange(l: any): void {
-    this.file_store = l;
     if (l.length) {
       const f = l[0];
+      this.file_store = f;
       const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
       this.form.patchValue({'doc_csr_policy': `${f.name}${count}`});
     } else {
       this.form.patchValue({'doc_csr_policy': ''});
     }
   }
-  handleFileInput2Change(l: any): void {
-    this.file_store2 = l;
-    if (l.length) {
-      const f = l[0];
-      const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
-      this.form.patchValue({'display2': `${f.name}${count}`});
-    } else {
-      this.form.patchValue({'display2': ''});
-    }
-  }
+
 }

@@ -12,10 +12,6 @@ import { Form, sample } from '../interfaces/form';
 })
 export class CommonService {
   token: string | null = localStorage.getItem('token') || null;
-  thirdPage: any;
-  CrsPage: any;
-  evPage: any;
-  hrPage: any;
   getData: BehaviorSubject<Form> = new BehaviorSubject(sample);
   getDataObservable = this.getData.asObservable();
 
@@ -76,15 +72,18 @@ export class CommonService {
     }
   }
 
-  storeApplication(data: any) {
+  storeApplication(data: Form, files: {name: string, file: any, fname: string}[] = []) {
     const x = {...this.getData.getValue(), ...data};
     if(JSON.stringify(x) === JSON.stringify(this.getData.getValue())) return of('Nothing to update.');
-    let params: any = {};
+    let params = new FormData();
     for (let [key, value] of Object.entries(data)) {
-        if (value !== '' && value != undefined)
-            params[key] = value;
+      if (value !== '' && value != undefined) params.append(key, value)
     }
-    return this.http.post(environment.baseUrl + 'application', params, { headers: { Authorization: `Bearer ${this.token}` } }).pipe(map(res=>{
+    for (let i = 0; i < files.length; i++) {
+      if (files[i].file) params.append(files[i].name, files[i].file, files[i].fname);
+    }
+    return this.http.post(environment.baseUrl + 'application', params, { headers: { Authorization: `Bearer ${this.token}` } }).pipe(map((res: any)=>{
+      this.openSnackBar(res.message);
       this.getFormData();
       return res;
     }));

@@ -1,112 +1,115 @@
 
 <mat-card>
-    <mat-card-title class="bgcolor">INNOVATION,RESEARCH & DEVELOPMENT</mat-card-title>
+    <mat-card-title class="bgcolor">ANY OTHER INFORMATION</mat-card-title>
     <mat-card-content>
       <form class="example-form" [formGroup]="form">
   
         <div class="row-fill">
             <div class="example-full-width col">
-              <mat-label>State in Detail Measures Taken in the Field of Innovation/R&D Its Impact Over the Last 3 Years *</mat-label>
+              <mat-label>Branding & Advertising policy *</mat-label>
               <mat-form-field appearance="outline">
                 <textarea
                   matInput
                   placeholder="(only 200 words allowed)"
                   autocomplete=""
-                  formControlName="innov_rnd_impact"
+                  formControlName="advertising_policy"
                 >
                 </textarea>
                 <mat-error
                   *ngIf="
-                    form.get('innov_rnd_impact')?.hasError('required') &&
-                    form.get('innov_rnd_impact')?.touched
+                    form.get('advertising_policy')?.hasError('required') &&
+                    form.get('advertising_policy')?.touched
                   "
-                  >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                  >ⓘ Please enter your  Branding & Advertising policy  –  it's required</mat-error
                 >
                 <mat-error
                   *ngIf="
-                    form.get('innov_rnd_impact')?.hasError('maxLength') &&
-                    form.get('innov_rnd_impact')?.touched
+                    form.get('advertising_policy')?.hasError('maxLength') &&
+                    form.get('advertising_policy')?.touched
                   "
-                  >ⓘ Please enter your  Innovation/R&D  –  it's too long</mat-error
+                  >ⓘ Please enter your   Branding & Advertising policy –  it's too long</mat-error
                 >
               </mat-form-field>
             </div>
           </div>
 
 
-
+          <div class="row-fill space-between">
+            <div class="row space-between example-half-width">Annual Advertising Expenditure (in Lakhs) *</div>
+            <div class="row space-between example-half-width">Annual Advertising Expenditure (in Lakhs) </div>  
+          </div>
          
           <div class="row space-between wrap">
             <div class="example-quater-width col ">
-              <mat-label>Annual expenditure on Innovation/R & D (in Lakhs) *</mat-label>
+              <mat-label>Print *</mat-label>
               <mat-form-field appearance="outline">
                 <input
                   matInput
-                  placeholder="(expenditure)"
+                  placeholder="(print)"
                   autocomplete=""
-                  formControlName="annual_innov_rnd_expense"
+                  formControlName="annual_advert_expense_print"
                 >
                 <mat-error
                   *ngIf="
-                    form.get('annual_innov_rnd_expense')?.hasError('required') &&
-                    form.get('annual_innov_rnd_expense')?.touched
+                    form.get('annual_advert_expense_print')?.hasError('required') &&
+                    form.get('annual_advert_expense_print')?.touched
                   "
-                  >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                  >ⓘ Please enter your  Annual Advertising Expenditure  –  it's required</mat-error
                 >
               </mat-form-field>
             </div>
             <div class="example-quater-width col">
-                <mat-label>Annual expenditure on Innovation/R & D (in Lakhs) *</mat-label>
+                <mat-label>Digital *</mat-label>
                 <mat-form-field appearance="outline">
                   <input
                     matInput
-                    placeholder="(expenditure)"
+                    placeholder="(Digital)"
                     autocomplete=""
-                    formControlName="annual_innov_rnd_expense"
+                    formControlName="annual_advert_expense_digital"
                   >
                   <mat-error
                     *ngIf="
-                      form.get('annual_innov_rnd_expense')?.hasError('required') &&
-                      form.get('annual_innov_rnd_expense')?.touched
+                      form.get('annual_advert_expense_digital')?.hasError('required') &&
+                      form.get('annual_advert_expense_digital')?.touched
                     "
-                    >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                    >ⓘ Please enter your  Digital  –  it's required</mat-error
                   >
                 </mat-form-field>
               </div>
 
               <div class="example-quater-width col">
-                <mat-label>Annual expenditure on Innovation/R & D (in Lakhs) *</mat-label>
+                <mat-label>English Language *</mat-label>
                 <mat-form-field appearance="outline">
                   <input
                     matInput
-                    placeholder="(expenditure)"
+                    placeholder="(English Language )"
                     autocomplete=""
-                    formControlName="annual_innov_rnd_expense"
+                    formControlName="annual_advert_expense_english"
                   >
                   <mat-error
                     *ngIf="
-                      form.get('annual_innov_rnd_expense')?.hasError('required') &&
-                      form.get('annual_innov_rnd_expense')?.touched
+                      form.get('annual_advert_expense_english')?.hasError('required') &&
+                      form.get('annual_advert_expense_english')?.touched
                     "
-                    >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                    >ⓘ Please enter your  English Language  –  it's required</mat-error
                   >
                 </mat-form-field>
               </div>
               <div class="example-quater-width col">
-                  <mat-label>Annual expenditure on Innovation/R & D (in Lakhs) *</mat-label>
+                  <mat-label>Vernacular Language *</mat-label>
                   <mat-form-field appearance="outline">
                     <input
                       matInput
-                      placeholder="(expenditure)"
+                      placeholder="(Vernacular Language)"
                       autocomplete=""
-                      formControlName="annual_innov_rnd_expense"
+                      formControlName="annual_advert_expense_vernacular"
                     >
                     <mat-error
                       *ngIf="
-                        form.get('annual_innov_rnd_expense')?.hasError('required') &&
-                        form.get('annual_innov_rnd_expense')?.touched
+                        form.get('annual_advert_expense_vernacular')?.hasError('required') &&
+                        form.get('annual_advert_expense_vernacular')?.touched
                       "
-                      >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                      >ⓘ Please enter your  Vernacular Language  –  it's required</mat-error
                     >
                   </mat-form-field>
                 </div>
@@ -114,28 +117,28 @@
 
           <div class="row-fill">
             <div class="example-full-width col">
-              <mat-label>State in Detail Measures Taken in the Field of Innovation/R&D Its Impact Over the Last 3 Years</mat-label>
+              <mat-label>Any other relevant information</mat-label>
               <mat-form-field appearance="outline">
                 <textarea
                   matInput
                   placeholder="(only 200 words allowed)"
                   autocomplete=""
-                  formControlName="innov_rnd_impact"
+                  formControlName="other_info"
                 >
                 </textarea>
                 <mat-error
                   *ngIf="
-                    form.get('innov_rnd_impact')?.hasError('required') &&
-                    form.get('innov_rnd_impact')?.touched
+                    form.get('other_info')?.hasError('required') &&
+                    form.get('other_info')?.touched
                   "
-                  >ⓘ Please enter your  Innovation/R&D  –  it's required</mat-error
+                  >ⓘ Please enter your  Iother Information  –  it's required</mat-error
                 >
                 <mat-error
                   *ngIf="
-                    form.get('innov_rnd_impact')?.hasError('maxLength') &&
-                    form.get('innov_rnd_impact')?.touched
+                    form.get('other_info')?.hasError('maxLength') &&
+                    form.get('other_info')?.touched
                   "
-                  >ⓘ Please enter your  Innovation/R&D  –  it's too long</mat-error
+                  >ⓘ Please enter your  other Information  –  it's too long</mat-error
                 >
               </mat-form-field>
             </div>

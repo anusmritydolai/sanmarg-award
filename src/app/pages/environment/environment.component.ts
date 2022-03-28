@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, Form } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
 
@@ -11,10 +11,10 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class EnvironmentComponent implements OnInit {
   form: FormGroup = new FormGroup({
-    female: new FormControl('', [Validators.required]),
-    detail: new FormControl('', [Validators.required, Validators.maxLength(200)]),
-    display: new FormControl("", [Validators.required]),
-    display2: new FormControl("", [Validators.required])
+    renewable_energy_expense: new FormControl('', [Validators.required]),
+    env_hazard_renewable_energy: new FormControl('', [Validators.required, Validators.maxLength(200)]),
+    doc_env_supporting: new FormControl("", [Validators.required]),
+    display2: new FormControl("")
   });
   constructor(private commonService: CommonService, private router: Router) { }
 
@@ -24,9 +24,18 @@ export class EnvironmentComponent implements OnInit {
     })
   }
 
+
   nextClick() {
-    this.commonService.evPage = 'vhjvhhg';
-    this.router.navigate(['/crs-page']);
+    if (this.form.valid) {
+      const data: any = this.form.value;
+      const x = [
+        { name: 'doc_env_supporting', file: this.file_store, fname: data.doc_env_supporting },
+        { name: 'display2', file: this.file_store2, fname: data.display2 }
+      ]
+      this.commonService.storeApplication(data, x).subscribe(data => {
+        this.router.navigate(['/crs-page']);
+      })
+    } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }
 
   prevClick() {
@@ -36,24 +45,26 @@ export class EnvironmentComponent implements OnInit {
   file_store2: FileList | undefined;
 
   handleFileInputChange(l: any): void {
-    this.file_store = l;
     if (l.length) {
       const f = l[0];
+      this.file_store = f;
       const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
-      this.form.patchValue({'display': `${f.name}${count}`});
+      this.form.patchValue({'doc_env_supporting': `${f.name}${count}`});
     } else {
-      this.form.patchValue({'display': ''});
+      this.form.patchValue({'doc_env_supporting': ''});
     }
   }
+
   handleFileInput2Change(l: any): void {
-    this.file_store2 = l;
     if (l.length) {
       const f = l[0];
+      this.file_store2 = f;
       const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
       this.form.patchValue({'display2': `${f.name}${count}`});
     } else {
       this.form.patchValue({'display2': ''});
     }
   }
+
 
 }

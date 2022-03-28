@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { CommonService } from 'src/app/services/common.service';
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Form } from 'src/app/interfaces/form';
 
 export const MY_FORMATS = {
   parse: {
@@ -36,28 +37,24 @@ export const MY_FORMATS = {
 export class ThirdPageComponent implements OnInit {
   date = moment();
   form: any = new FormGroup({
-    business_synopsis: new FormControl('', [Validators.required]),
-    year: new FormControl('', [Validators.required]),
-    main_product: new FormControl('', [Validators.required]),
-    last_year: new FormControl('', [Validators.required]),
-    last2_year: new FormControl('', [Validators.required]),
-    last3_year: new FormControl('', [Validators.required]),
-    before_lastyear: new FormControl('', [Validators.required]),
-    before_last2year: new FormControl('', [Validators.required]),
-    before_last3year: new FormControl('', [Validators.required]),
-    last_years: new FormControl('', [Validators.required]),
-    last2_years: new FormControl('', [Validators.required]),
-    last3_years: new FormControl('', [Validators.required]),
-    market_lastyear: new FormControl('', [Validators.required]),
-    market_last2year: new FormControl('', [Validators.required]),
-    market_last3year: new FormControl('', [Validators.required]),
-    investments_wb: new FormControl('', [Validators.required]),
-    financial_lastyear: new FormControl('', [Validators.required]),
-    financial_last2year: new FormControl('', [Validators.required]),
-    financial_last3year: new FormControl('', [Validators.required]),
-    display: new FormControl("", [Validators.required]),
-    display2: new FormControl("", [Validators.required]),
-    display3: new FormControl("", [Validators.required])
+    synopsis: new FormControl('', [Validators.required]),
+    est_year: new FormControl('', [Validators.required]),
+    product_services: new FormControl('', [Validators.required]),
+    annual_turnover_2021: new FormControl('', [Validators.required]),
+    annual_turnover_2020: new FormControl('', [Validators.required]),
+    annual_turnover_2019: new FormControl('', [Validators.required]),
+    profit_b_tax_2021: new FormControl('', [Validators.required]),
+    profit_b_tax_2020: new FormControl('', [Validators.required]),
+    profit_b_tax_2019: new FormControl('', [Validators.required]),
+    net_worth_2021: new FormControl('', [Validators.required]),
+    net_worth_2020: new FormControl('', [Validators.required]),
+    net_worth_2019: new FormControl('', [Validators.required]),
+    market_cap_2021: new FormControl('', [Validators.required]),
+    market_cap_2020: new FormControl('', [Validators.required]),
+    wb_investment: new FormControl('', [Validators.required]),
+    doc_annual_report_2021: new FormControl("", [Validators.required]),
+    doc_annual_report_2020: new FormControl("", [Validators.required]),
+    doc_annual_report_2019: new FormControl("", [Validators.required])
   });
   constructor(private commonService: CommonService, private router: Router) { }
 
@@ -68,48 +65,55 @@ export class ThirdPageComponent implements OnInit {
   }
 
   nextClick() {
-    
-    
-    this.commonService.thirdPage = 'vhjvhhg';
-    this.router.navigate(['/hr-page']);
+    if (this.form.valid) {
+      const data: Form = this.form.value;
+      const x = [
+        { name: 'doc_annual_report_2021', file: this.file_store, fname: data.doc_annual_report_2021 },
+        { name: 'doc_annual_report_2020', file: this.file_store2, fname: data.doc_annual_report_2020 },
+        { name: 'doc_annual_report_2019', file: this.file_store3, fname: data.doc_annual_report_2019 },
+      ]
+      this.commonService.storeApplication(data, x).subscribe(data => {
+        this.router.navigate(['/hr-page']);
+      })
+    } else { this.form.markAllAsTouched(); this.commonService.openSnackBar('Please correct the form'); }
   }
 
   prevClick() {
     this.router.navigate(['/second-page']);
   }
 
-  file_store: FileList | undefined;
-  file_store3: FileList | undefined;
-  file_store2: FileList | undefined;
+  file_store: File | undefined;
+  file_store2: File | undefined;
+  file_store3: File | undefined;
 
   handleFileInputChange(l: any): void {
-    this.file_store = l;
     if (l.length) {
       const f = l[0];
+      this.file_store = f;
       const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
-      this.form.patchValue({'display': `${f.name}${count}`});
+      this.form.patchValue({'doc_annual_report_2021': `${f.name}${count}`});
     } else {
-      this.form.patchValue({'display': ''});
+      this.form.patchValue({'doc_annual_report_2021': ''});
     }
   }
   handleFileInput2Change(l: any): void {
-    this.file_store2 = l;
     if (l.length) {
       const f = l[0];
+      this.file_store2 = f;
       const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
-      this.form.patchValue({'display2': `${f.name}${count}`});
+      this.form.patchValue({'doc_annual_report_2020': `${f.name}${count}`});
     } else {
-      this.form.patchValue({'display2': ''});
+      this.form.patchValue({'doc_annual_report_2020': ''});
     }
   }
   handleFileInput3Change(l: any): void {
-    this.file_store3 = l;
     if (l.length) {
       const f = l[0];
+      this.file_store3 = f;
       const count = l.length > 1 ? `(+${l.length - 1} files)` : "";
-      this.form.patchValue({'display3': `${f.name}${count}`});
+      this.form.patchValue({'doc_annual_report_2019': `${f.name}${count}`});
     } else {
-      this.form.patchValue({'display3': ''});
+      this.form.patchValue({'doc_annual_report_2019': ''});
     }
   }
 }

@@ -15,16 +15,16 @@
               matInput
               placeholder="Business Synopsis"
               autocomplete=""
-              formControlName="business_synopsis"
+              formControlName="synopsis"
               required
             >
             </textarea>
             <mat-error
               *ngIf="
-                form.get('business_synopsis')?.hasError('required') &&
-                form.get('business_synopsis')?.touched
+                form.get('synopsis')?.hasError('required') &&
+                form.get('synopsis')?.touched
               "
-              >ⓘ Please enter your business_synopsis – it's required</mat-error
+              >ⓘ Please enter your synopsis – it's required</mat-error
             >
           </mat-form-field>
         </div>
@@ -45,7 +45,7 @@
               startView="multi-year"
               (yearSelected)="
                 date = $event;
-                form.get('year').setValue($event.year());
+                form.get('est_year').setValue($event.year());
                 dp?.close()
               "
               panelClass="example-month-picker"
@@ -60,13 +60,13 @@
               matInput
               placeholder="Main Product"
               autocomplete=""
-              formControlName="main_product"
+              formControlName="product_services"
               required
             />
             <mat-error
               *ngIf="
-                form.get('main_product')?.hasError('required') &&
-                form.get('main_product')?.touched
+                form.get('product_services')?.hasError('required') &&
+                form.get('product_services')?.touched
               "
               >ⓘ Please enter your Main Product – it's required</mat-error
             >
@@ -87,13 +87,13 @@
                 matInput
                 placeholder="2021"
                 autocomplete=""
-                formControlName="last_year"
+                formControlName="annual_turnover_2021"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('last_year')?.hasError('required') &&
-                  form.get('last_year')?.touched
+                  form.get('annual_turnover_2021')?.hasError('required') &&
+                  form.get('annual_turnover_2021')?.touched
                 "
                 >ⓘ Please enter 2021 – it's required</mat-error
               >
@@ -106,13 +106,13 @@
                 matInput
                 placeholder="2020"
                 autocomplete=""
-                formControlName="last2_year"
+                formControlName="annual_turnover_2020"
                 required
               />
               <mat-error
                 *ngIf="
-                form.get('last2_year')?.touched &&
-                form.get('last2_year')?.hasError('required')
+                form.get('annual_turnover_2020')?.touched &&
+                form.get('annual_turnover_2020')?.hasError('required')
                 "
                 >ⓘ Please enter 2020 – it's required</mat-error
               >
@@ -125,13 +125,13 @@
                 matInput
                 placeholder="2019"
                 autocomplete=""
-                formControlName="last3_year"
+                formControlName="annual_turnover_2019"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('last3_year')?.hasError('required') &&
-                  form.get('last3_year')?.touched
+                  form.get('annual_turnover_2019')?.hasError('required') &&
+                  form.get('annual_turnover_2019')?.touched
                 "
                 >ⓘ Please enter 2019 – it's required</mat-error
               >
@@ -146,13 +146,13 @@
                 matInput
                 placeholder="2021"
                 autocomplete=""
-                formControlName="before_lastyear"
+                formControlName="profit_b_tax_2021"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('before_lastyear')?.hasError('required') &&
-                  form.get('before_lastyear')?.touched
+                  form.get('profit_b_tax_2021')?.hasError('required') &&
+                  form.get('profit_b_tax_2021')?.touched
                 "
                 >ⓘ Please enter  2021 – it's required</mat-error
               >
@@ -165,13 +165,13 @@
                 matInput
                 placeholder="2020"
                 autocomplete=""
-                formControlName="before_last2year"
+                formControlName="profit_b_tax_2020"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('before_last2year')?.hasError('required') &&
-                  form.get('before_last2year')?.touched
+                  form.get('profit_b_tax_2020')?.hasError('required') &&
+                  form.get('profit_b_tax_2020')?.touched
                 "
                 >ⓘ Please enter  2020 – it's required</mat-error
               >
@@ -184,13 +184,13 @@
                 matInput
                 placeholder="2019"
                 autocomplete=""
-                formControlName="before_last3year"
+                formControlName="profit_b_tax_2019"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('before_last3year')?.hasError('required') &&
-                  form.get('before_last3year')?.touched
+                  form.get('profit_b_tax_2019')?.hasError('required') &&
+                  form.get('profit_b_tax_2019')?.touched
                 "
                 >ⓘ Please enter  2019 – it's required</mat-error
               >
@@ -212,13 +212,13 @@
                 matInput
                 placeholder="2021"
                 autocomplete=""
-                formControlName="last_years"
+                formControlName="net_worth_2021"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('last_years')?.hasError('required') &&
-                  form.get('last_years')?.touched
+                  form.get('net_worth_2021')?.hasError('required') &&
+                  form.get('net_worth_2021')?.touched
                 "
                 >ⓘ Please enter 2021 – it's required</mat-error
               >
@@ -231,13 +231,13 @@
                 matInput
                 placeholder="2020"
                 autocomplete=""
-                formControlName="last2_years"
+                formControlName="net_worth_2020"
                 required
               />
               <mat-error
                 *ngIf="
-                form.get('last2_years')?.touched &&
-                form.get('last2_years')?.hasError('required')
+                form.get('net_worth_2020')?.touched &&
+                form.get('net_worth_2020')?.hasError('required')
                 "
                 >ⓘ Please enter 2020 – it's required</mat-error
               >
@@ -250,13 +250,13 @@
                 matInput
                 placeholder="2019"
                 autocomplete=""
-                formControlName="last3_years"
+                formControlName="net_worth_2019"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('last3_years')?.hasError('required') &&
-                  form.get('last3_years')?.touched
+                  form.get('net_worth_2019')?.hasError('required') &&
+                  form.get('net_worth_2019')?.touched
                 "
                 >ⓘ Please enter 2019 – it's required</mat-error
               >
@@ -271,13 +271,13 @@
                 matInput
                 placeholder="2021"
                 autocomplete=""
-                formControlName="market_lastyear"
+                formControlName="market_cap_2021"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('market_lastyear')?.hasError('required') &&
-                  form.get('market_lastyear')?.touched
+                  form.get('market_cap_2021')?.hasError('required') &&
+                  form.get('market_cap_2021')?.touched
                 "
                 >ⓘ Please enter  2021 – it's required</mat-error
               >
@@ -290,13 +290,13 @@
                 matInput
                 placeholder="2020"
                 autocomplete=""
-                formControlName="market_last2year"
+                formControlName="market_cap_2020"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('market_last2year')?.hasError('required') &&
-                  form.get('market_last2year')?.touched
+                  form.get('market_cap_2020')?.hasError('required') &&
+                  form.get('market_cap_2020')?.touched
                 "
                 >ⓘ Please enter  2020 – it's required</mat-error
               >
@@ -317,13 +317,13 @@
                 matInput
                 placeholder="Investments in West Bengal"
                 autocomplete=""
-                formControlName="investments_wb"
+                formControlName="wb_investment"
                 required
               />
               <mat-error
                 *ngIf="
-                  form.get('investments_wb')?.hasError('required') &&
-                  form.get('investments_wb')?.touched
+                  form.get('wb_investment')?.hasError('required') &&
+                  form.get('wb_investment')?.touched
                 "
                 >ⓘ Please enter  Investment in west Bengal 2021 – it's required</mat-error
               >
@@ -340,7 +340,7 @@
               <button mat-raised-button class="sam" matSuffix (click)="f_input.click()">
                 Browse
               </button>
-              <input type="text" readonly matInput formControlName="display" />
+              <input type="text" readonly matInput formControlName="doc_annual_report_2021" />
               <input
                 type="file"
                 multiple
@@ -357,7 +357,7 @@
               <button mat-raised-button class="sam" matSuffix (click)="f2_input.click()">
                 Browse
               </button>
-              <input type="text" readonly matInput formControlName="display2" />
+              <input type="text" readonly matInput formControlName="doc_annual_report_2020" />
               <input
                 type="file"
                 multiple
@@ -375,7 +375,7 @@
               <button mat-raised-button class="sam" matSuffix (click)="f3_input.click()">
                 Browse
               </button>
-              <input type="text" readonly matInput formControlName="display3" />
+              <input type="text" readonly matInput formControlName="doc_annual_report_2019" />
               <input
                 type="file"
                 multiple
