@@ -3,14 +3,14 @@
     <form [formGroup]="form" class="login-form">
         <div>
         <input type="text" placeholder="email" formControlName="email"/>
-        <mat-error *ngIf="form.controls['email'].hasError('required') && form.controls['email']?.touched">ⓘ Please enter your email – it's
+        <mat-error *ngIf="form.controls['email'].hasError('required') && form.controls['email']?.touched">ⓘ Please enter your email – it's required
             </mat-error>
         <mat-error *ngIf="form.controls['email'].hasError('email') && !form.controls['email'].hasError('required')">ⓘ
             Please enter a valid username – it's invalid</mat-error>
         </div>
         <div>
             <input type="password" placeholder="Password" formControlName="password"/>
-        <mat-error *ngIf="form.controls['password'].hasError('required') && form.controls['password']?.touched">ⓘ Please enter your password – it's
+        <mat-error *ngIf="form.controls['password'].hasError('required') && form.controls['password']?.touched">ⓘ Please enter your password – it's required
             </mat-error>
         </div>
         <button mat-raised-button class="btn-login" (click)="login()">Login</button>

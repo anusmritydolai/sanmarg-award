@@ -8,7 +8,7 @@
 
 .img {
     height: 72px;
-    background-color: grey;
+    margin-left: 1rem;
 
 }
 
@@ -24,14 +24,14 @@
 
 .header {
     height: 80px; width: 100vw;
-    background-color: white;
+    background-color: #efefef;
     width: calc(100vw - 12px) !important;
 
 }
 
 .footer {
     width: 100vw;
-    background-color: grey;
+    background-color: #efefef;
     width: calc(100vw - 12px) !important;
 
 }
